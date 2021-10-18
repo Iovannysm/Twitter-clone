@@ -4,7 +4,11 @@
   "description": "This is a tweeter clone",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-sass": "sass -w sass/src:public/styles",
+    "watch-nodemon": "nodemon server.js",
+    "dev": "open http://localhost:4000/products && concurrently --handle-input -n server,sass -c 'bgGreen.bold,bgMagenta.bold' 'npm:watch-nodemon' 'npm:watch-sass' rs ",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
