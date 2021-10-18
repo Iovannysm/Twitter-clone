@@ -10,15 +10,14 @@ const tweetSchema = new mongoose.Schema({
       
     date:{ 
         type: Date,
-        required: true,
+        default: Date.now(),
     },
     user: {
-    type: mongoose.Types.ObjectId,
-    ref: "User",
-    required: true,
+        type: mongoose.Types.ObjectId,
+        ref: "User",
+        required: true,
     },
 
-    
 }, 
     {
     timestamps: true,
