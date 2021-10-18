@@ -2,7 +2,10 @@
 const express = require("express");
 const methodOverride = require("method-override");
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> development
 
 /* === Internal Modules === */
 const controller = require("./controllers")
