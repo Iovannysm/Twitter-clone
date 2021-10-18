@@ -2,6 +2,10 @@
 const express = require("express");
 const methodOverride = require("method-override");
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> development
 
 /* === Internal Modules === */
 const controller = require("./controllers")
@@ -9,7 +13,7 @@ const controller = require("./controllers")
 /* === System Variables === */
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT;
 
 
 /* === System Configuration === */
