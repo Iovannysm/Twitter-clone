@@ -4,7 +4,7 @@ const methodOverride = require("method-override");
 
 
 /* === Internal Modules === */
-const controller = require("./controllers")
+const controller = require("./controllers");
 
 /* === System Variables === */
 
