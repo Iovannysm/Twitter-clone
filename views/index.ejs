@@ -2,16 +2,27 @@
 <html lang="en">
     <%- include('./partials/_head.ejs', {page: "Home"})%>
 <body>
-    <main class="container">
-        <section class="container left-side">
+    <main class="row container">
+        <section class="col left-side">
             <img src="https://i.imgur.com/U3IJC5J.png">
         </section>
-        <section class="container right-side">
+
+        <section class="col right-side">
             <i class="fab fa-twitter"></i>
+
+            <article class="row">
+                <h2>Happening now</h2>
+                <h4>Join Twitter today.</h4>
+            </article>
+            <article class="row">
+                <button>Sign up with email</button>
+                <p>Already have an account?</p>
+                <button>Sign in</button>
+            </article>
         </section>
-
-
-
     </main>
+    <footer>
+        <p>&copy; 2021 Twitter, Inc.</p>
+    </footer>
 </body>
 </html>
