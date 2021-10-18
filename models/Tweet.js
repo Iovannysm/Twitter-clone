@@ -7,12 +7,17 @@ const tweetSchema = new mongoose.Schema({
         type: String,
         required: [true, "The field can not be empty."],
       },
-      user: {
-        type: mongoose.Types.ObjectId,
-        ref: "User",
+      
+    date:{ 
+        type: Date,
         required: true,
-      },
-  
+    },
+    user: {
+    type: mongoose.Types.ObjectId,
+    ref: "User",
+    required: true,
+    },
+
     
 }, 
     {
