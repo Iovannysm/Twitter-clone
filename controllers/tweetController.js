@@ -36,4 +36,20 @@ router.get("/:id", function (req, res, next) {
     });
 });
 
+
+// Create
+router.post("/", function (req, res, next) {
+    const data = req.body;
+   
+   Tweet.create(data, function (error, newTweet) {
+      if (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+      }
+      console.log(newTweet);
+      res.redirect("/tweet");
+  });
+});
+
 module.exports = router;
