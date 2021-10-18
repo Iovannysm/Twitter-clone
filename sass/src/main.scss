@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 *{
   box-sizing: border-box;
 }
 
 :root {
   --primary: rgb(74, 153, 233);
+  --neutralgrey: rgb(209, 217, 221);
+  --darkneutralgrey: rgb(230, 230, 230);
 }
 
 body {
@@ -13,9 +17,11 @@ body {
   height: 100vh;
 }
 
+// Index home page
 .container { 
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .left-side {
@@ -32,10 +38,45 @@ body {
 
 .right-side {
   width: 850px;
+  margin-left: 30px;
+  text-align: left;
 
   i {
-    margin: 80px 30px;
+    margin: 80px 0px;
     font-size: 2.7em;
     color: var(--primary);
+  }
+
+  h2 {
+    font-size: 68px;
+    font-weight: 900;
+  }
+  h3 {
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: 900;
+  }
+
+  p {
+    margin: 0;
+  }
+  .buttons {
+    margin: 20px 0;
+    width: 300px;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid var(--neutralgrey);
+    
+  }
+  button:hover {
+    background-color: var(--darkneutralgrey);
+  }
+  footer {
+    h6 {
+      margin: 0 auto;
+      line-height: 1.5;
+      text-align: center;
+    }
+    
   }
 }
