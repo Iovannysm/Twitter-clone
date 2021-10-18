@@ -5,6 +5,7 @@ const methodOverride = require("method-override");
 
 /* === Internal Modules === */
 const controller = require("./controllers");
+require("./config/db.connection");
 
 /* === System Variables === */
 
@@ -27,7 +28,7 @@ app.use(express.static("public"));
 // Home
 
 app.get("/", function (req, res) {
-    res.redirect("/")
+    res.render("index");
 });
 
 

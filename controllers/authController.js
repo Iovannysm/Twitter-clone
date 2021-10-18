@@ -4,3 +4,4 @@ const { User } = require("../models");
 
 // base url === /
 
+module.exports = router;
