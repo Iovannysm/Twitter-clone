@@ -7,8 +7,8 @@ const { User } = require("../models");
 
 
 
-router.get("/login", function(req, res) {
- return res.render("./show");
+router.get("/dashboard", function(req, res) {
+ return res.render("show");
 });
 
 // New
@@ -43,7 +43,7 @@ router.post("/register", async function(req, res, next) {
 
     console.log(foundUser);
 
-    return res.redirect("/logged");
+    return res.redirect("/dashboard");
 
   } catch (error) {
       console.log(error);
@@ -78,7 +78,7 @@ router.post("/login", async function (req, res, next) {
       id: foundUser._id,
       username: foundUser.username,
     }
-    return res.redirect("/logged");
+    return res.redirect("/dashboard");
 
   } catch (error) {
     console.log(error);
