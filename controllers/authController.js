@@ -5,6 +5,15 @@ const { User } = require("../models");
 
 // base url === /
 
+
+// Login route
+
+router.get("/login", function(req, res) {
+  res.send("This is the page that populates after the user has logged in.");
+});
+
+
+
 // Create user
 
 router.post("/", async function(req, res, next) {
@@ -12,7 +21,7 @@ router.post("/", async function(req, res, next) {
     const userDoesExist = await User.exists({email: req.body.email});
 
     if (userDoesExist) {
-      return res.redirect("/");
+      return res.redirect("/login");
     }
     const salt = await bcrypt.genSalt(10);
 
@@ -22,7 +31,7 @@ router.post("/", async function(req, res, next) {
 
     await User.create(req.body);
 
-    return res.redirect("/tweet");
+    return res.redirect("/login");
 
   } catch (error) {
       console.log(error);
@@ -30,7 +39,6 @@ router.post("/", async function(req, res, next) {
       return next();
   }
 });
-
 
 // Authenticate user
 router.post("/", async function (req, res, next) {
@@ -50,7 +58,7 @@ router.post("/", async function (req, res, next) {
       id: foundUser_id,
       username: foundUser.username,
     }
-    return res.redirect("/tweet");
+    return res.redirect("/login");
 
   } catch (error) {
     console.log(error);
