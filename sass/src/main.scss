@@ -43,7 +43,7 @@ body {
 
   i {
     margin: 80px 0px;
-    font-size: 2.7em;
+    font-size: 3.3em;
     color: var(--primary);
   }
 
@@ -60,14 +60,20 @@ body {
   p {
     margin: 0;
   }
+  
   .buttons {
     margin: 20px 0;
     width: 300px;
     border-radius: 20px;
     background-color: white;
     border: 1px solid var(--neutralgrey);
-    
   }
+
+
+  button {
+    transition: background-color 0.5s;
+  }
+
   button:hover {
     background-color: var(--darkneutralgrey);
   }
@@ -78,5 +84,34 @@ body {
       text-align: center;
     }
     
+  }  
+}
+
+// Sign Up Modal
+#btnClose {
+  margin: 10px;
+  padding: 0;
+}
+
+.modal-dialog{
+  width: 800px;
+
+  i {
+    margin: 0px auto;
+    font-size: 2em;
+    color: var(--primary);
   }
+
+  button {
+    border-radius: 25px;
+    padding: 10px 30px;
+  }
+}
+
+#modal {
+  border-radius: 20px;
+}
+
+#modal-header {
+  border: none;
 }

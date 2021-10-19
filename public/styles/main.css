@@ -40,7 +40,7 @@ body {
 }
 .right-side i {
   margin: 80px 0px;
-  font-size: 2.7em;
+  font-size: 3.3em;
   color: var(--primary);
 }
 .right-side h2 {
@@ -62,6 +62,9 @@ body {
   background-color: white;
   border: 1px solid var(--neutralgrey);
 }
+.right-side button {
+  transition: background-color 0.5s;
+}
 .right-side button:hover {
   background-color: var(--darkneutralgrey);
 }
@@ -69,6 +72,32 @@ body {
   margin: 0 auto;
   line-height: 1.5;
   text-align: center;
+}
+
+#btnClose {
+  margin: 10px;
+  padding: 0;
+}
+
+.modal-dialog {
+  width: 800px;
+}
+.modal-dialog i {
+  margin: 0px auto;
+  font-size: 2em;
+  color: var(--primary);
+}
+.modal-dialog button {
+  border-radius: 25px;
+  padding: 10px 30px;
+}
+
+#modal {
+  border-radius: 20px;
+}
+
+#modal-header {
+  border: none;
 }
 
 /*# sourceMappingURL=main.css.map */
