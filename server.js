@@ -65,6 +65,11 @@ app.get("/", function (req, res) {
 app.use("/", controller.auth);
 
 
+// Tweets
+
+app.use("/tweets", controller.tweet);
+
+
 // == utility routes
 
 app.get("/*", function (req, res) {
