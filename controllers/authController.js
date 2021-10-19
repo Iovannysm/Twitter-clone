@@ -9,7 +9,7 @@ const { User } = require("../models");
 // Login route
 
 router.get("/login", function(req, res) {
-  res.send("This is the page that populates after the user has logged in.");
+ return res.render("./show");
 });
 
 

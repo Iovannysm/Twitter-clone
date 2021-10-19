@@ -2,22 +2,117 @@
 <html lang="en">
     <%- include('./partials/_head.ejs', {page: "Dashboard"})%>
 <body>
-    <section class="left">
-        <button type="button" class="btn btn-primary">Tweet</button>
-    </section>
-    <section class="center">
-        <article>
-            <a href="http://"></a>
-            <form action="" method="post">
-
-                <button type="button" class="btn btn-primary">Tweet</button>
-            </form>
-        </article>
-
-    </section>
-    <section class="right">
-
-    </section>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <section class="container left">
+                <div class="col">
+                    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+                        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                        <span class="fs-4">Sidebar</span>
+                        </a>
+                        <hr>
+                        <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" aria-current="page">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                            Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                            Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                            Orders
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                            Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                            Customers
+                            </a>
+                        </li>
+                        </ul>
+                        <button type="button" class="btn btn-primary">Tweet</button>
+                        <hr>
+                        <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
+                            <strong></strong>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div>
+          <div class="col">
+            <section class="container center">
+                <div class="col">
+                    <article>
+                        <a href="http://"></a>
+                        <div class="card">
+                            <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <form action="/tweets" method="POST">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
+                                </div>
+                                <input type="submit" value="Tweet" class="btn btn-primary"></input>
+                            
+                            </form>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+          </div>
+          <div class="col">
+            <section class="container right">
+                <div class="col">
+                    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" style="width: 380px;">
+                        <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+                        <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                        <span class="fs-5 fw-semibold">List group</span>
+                        </a>
+                        <div class="list-group list-group-flush border-bottom scrollarea">
+                        <a href="#" class="list-group-item list-group-item-action active py-3 lh-tight" aria-current="true">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">List group item heading</strong>
+                            <small>Wed</small>
+                            </div>
+                            <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-3 lh-tight">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                            <strong class="mb-1">List group item heading</strong>
+                            <small class="text-muted">Tues</small>
+                            </div>
+                            <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div>
+        </div>
+      </div>
     
 </body>
 </html>
