@@ -15,7 +15,7 @@ const PORT = process.env.PORT;
 
 /* === System Configuration === */
 
-
+app.use(express.urlencoded({extended: false}))
 
 app.set("view engine", "ejs");
 
@@ -31,6 +31,10 @@ app.get("/", function (req, res) {
     res.render("index");
 });
 
+
+// Authentication
+
+app.use("/", controller.auth);
 
 
 // == utility routes

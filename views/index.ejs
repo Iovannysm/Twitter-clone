@@ -15,14 +15,74 @@
                 <h3>Join Twitter today.</h3>
             </article>
             <article class="row">
-                <button class="btn btn-light buttons">Sign up with email</button>
+                <a href="#signUpModal" data-bs-toggle="modal"><button class="btn btn-light buttons fw-bold">Sign up with email</button></a>
                 <p>Already have an account?</p>
-                <button class="btn btn-light buttons">Sign in</button>
+                <a href="#signInModal" data-bs-toggle="modal"><button class="btn btn-light buttons fw-bold">Sign in</button></a>
             </article>
         </section>
+
+        <!-- Sign In Modal -->
+        <div class="modal hide fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" id="modal">
+                    <div class="modal-header d-flex justify-content-start" id="modal-header">
+                        <button type="button" class="btn-close" id="btnClose" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                    <h5 class="modal-title mb-3" id="signInModalLabel">Sign into your account</h5>
+                    
+                    <form action="/" method="POST" class="w-100 d-flex flex-column justify-content-center align-items-center">
+                        <div class="form-floating w-75 mb-4">
+                            <input type="email" class="form-control" name="email" placeholder="name@email.com" aria-label="email" aria-describedby="email" required />
+                            <label for="email" class="form-label">Email address</label>
+                        </div>
+                        <div class="form-floating w-75 mb-4">
+                            <input type="password" class="form-control" name="password" placeholder="*********" aria-label="password" aria-describedby="password" required />
+                            <label for="password" class="form-label">Password</label>
+                            <a href="">Forgot your password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-75 fw-bold mb-3">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Sign Up Modal -->
+        <div class="modal hide fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" id="modal">
+                    <div class="modal-header d-flex justify-content-start" id="modal-header">
+                        <button type="button" class="btn-close" id="btnClose" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                    <h5 class="modal-title mb-3" id="signUpModalLabel">Create your account</h5>
+                    
+                    <form action="/" method="POST" class="w-100 d-flex flex-column justify-content-center align-items-center">
+                        <div class="form-floating w-75 mb-3">
+                            <input type="text" class="form-control" name="username" placeholder="username" aria-label="username" aria-describedby="username" required />
+                            <label for="username" class="form-label">Username</label>
+                        </div>
+                        <div class="form-floating w-75 mb-3">
+                            <input type="password" name="password" class="form-control" placeholder="*********" aria-label="password" aria-describedby="password" required />
+                            <label for="password" class="form-label">Password</label>
+                        </div>
+                        <div class="form-floating w-75 mb-4">
+                            <input type="email" class="form-control" name="email" placeholder="name@email.com" aria-label="email" aria-describedby="email" required />
+                            <label for="email" class="form-label">Email address</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-75 fw-bold mb-3">Create Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+  
     </main>
     <footer>
-        <h6 class="text-center lh-lg">&copy; 2021 Twitter, Inc.</h6>
+        <h6 class="text-center lh-lg">&copy; <%= new Date().getFullYear(); %> Twitter, Inc.</h6>
     </footer>
 </body>
 </html>
