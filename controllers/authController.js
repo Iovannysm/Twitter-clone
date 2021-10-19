@@ -6,17 +6,20 @@ const { User } = require("../models");
 // base url === /
 
 
-// Login route
 
 router.get("/login", function(req, res) {
  return res.render("./show");
 });
 
+// New
 
+router.get("/register", function(req, res) {
+  res.render("auth/register");
+});
 
-// Create user
+// Created user
 
-router.post("/", async function(req, res, next) {
+router.post("/register", async function(req, res, next) {
   try {
     const userDoesExist = await User.exists({email: req.body.email});
 
@@ -31,7 +34,16 @@ router.post("/", async function(req, res, next) {
 
     await User.create(req.body);
 
-    return res.redirect("/login");
+    const foundUser = await User.findOne({ email: req.body.email });
+
+    req.session.currentUser = {
+      id: foundUser._id,
+      username: foundUser.username,
+    }
+
+    console.log(foundUser);
+
+    return res.redirect("/logged");
 
   } catch (error) {
       console.log(error);
@@ -40,12 +52,20 @@ router.post("/", async function(req, res, next) {
   }
 });
 
+
+// Sign In
+
+router.get("/login", function(req, res) {
+  res.render("auth/login");
+});
+
+
 // Authenticate user
-router.post("/", async function (req, res, next) {
+router.post("/login", async function (req, res, next) {
   try{
     const foundUser = await User.findOne({ email: req.body.email });
     if (!foundUser) {
-      return res.redirect("/");
+      return res.redirect("/register");
     }
 
     const match = await bcrypt.compare(req.body.password, foundUser.password);
@@ -55,10 +75,10 @@ router.post("/", async function (req, res, next) {
     }
 
     req.session.currentUser = {
-      id: foundUser_id,
+      id: foundUser._id,
       username: foundUser.username,
     }
-    return res.redirect("/login");
+    return res.redirect("/logged");
 
   } catch (error) {
     console.log(error);
