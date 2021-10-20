@@ -11,7 +11,7 @@ router.get("/", function (req, res, next){
             const context = {
             tweets: allTweets,
             };
-        return res.render("/index", context);
+        return res.render("tweet/index", context);
     });
 });
 

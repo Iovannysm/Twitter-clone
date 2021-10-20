@@ -7,7 +7,7 @@ const { User } = require("../models");
 
 
 
-router.get("/dashboard", function(req, res) {
+router.get("/tweets", function(req, res) {
  return res.render("show");
 });
 
@@ -43,7 +43,7 @@ router.post("/register", async function(req, res, next) {
 
     console.log(foundUser);
 
-    return res.redirect("/dashboard");
+    return res.redirect("/tweets");
 
   } catch (error) {
       console.log(error);
@@ -78,7 +78,7 @@ router.post("/login", async function (req, res, next) {
       id: foundUser._id,
       username: foundUser.username,
     }
-    return res.redirect("/dashboard");
+    return res.redirect("/tweets");
 
   } catch (error) {
     console.log(error);
