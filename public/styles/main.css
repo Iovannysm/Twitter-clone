@@ -96,11 +96,6 @@ body {
   border-radius: 20px;
 }
 
-.modal.show {
-  opacity: 1;
-  display: block;
-}
-
 #modal-header {
   border: none;
 }
