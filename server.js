@@ -27,6 +27,8 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
+app.use(methodOverride('_method'));
+
 //Session config to create cookies
 app.use(session({
   store: MongoStore.create({mongoUrl: process.env.MONGODB_URI}),
