@@ -39,7 +39,8 @@ router.get("/:id", function (req, res, next) {
 
 // Create
 router.post("/", function (req, res, next) {
-    const data = req.body.content;
+    const data = req.body;
+    data.user = req.session.currentUser.id;
    
    Tweet.create(data, function (error, newTweet) {
       if (error) {
@@ -50,6 +51,22 @@ router.post("/", function (req, res, next) {
       console.log(newTweet);
       res.redirect("/tweets");
   });
+});
+
+
+
+//Delete
+router.delete("/:id", function(req, res, next) {
+  
+    Product.findByIdAndDelete(req.params.id, function (error, deletedTweet) {
+        if (error) {
+          console.log(error);
+          req.error = error;
+          return next();
+        }
+
+        res.redirect("/tweets");
+    });
 });
 
 module.exports = router;

@@ -10,23 +10,28 @@
                         <a href="http://"></a>
                         <div class="card">
                             <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <form action="/tweets" method="POST">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                    <textarea 
-                                    class="form-control"
-                                    name="content"
-                                    id="exampleFormControlTextarea1"
-                                    placeholder="What's happening?"
-                                    ></textarea>
-                                </div>
-                                <input type="submit" value="Tweet" class="btn btn-primary"></input>
-                            
-                            </form>
+                                <h5 class="card-title">Card title</h5>
+                                <form action="/tweets" method="POST">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                                        <textarea 
+                                        class="form-control"
+                                        name="content"
+                                        id="exampleFormControlTextarea1"
+                                        placeholder="What's happening?"
+                                        ></textarea>
+                                    </div>
+                                    <input type="submit" value="Tweet" class="btn btn-primary"></input>
+                                
+                                </form>
                             </div>
                         </div>
                     </article>
+                    <div class="container-lg">
+                        <article>
+                           <p><%= tweets.content %> </p> 
+                        </article>
+                    </div>
                 </div>
             </section>
             <section class="container right col">
