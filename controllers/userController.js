@@ -5,8 +5,14 @@ const { User } = require("../models");
 
 // base url === /user
 
+router.get("/",  function(req, res, next) {
+  res.redirect(`/user/${req.session.currentUser.id}`);
+});
+
+
+
 // Show User Information
-router.get("/:id", async function(req, res, next){
+router.get("/:id", function(req, res, next){
 
     User.findById(req.params.id, function (error, foundUser){
       if (error) {
