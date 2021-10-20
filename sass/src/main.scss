@@ -117,24 +117,26 @@ body {
 }
 
 
-// Tweets Nav Bar
+//Dashboard
 
 #tweetIndex {
+  width: 100vw;
+  height: 100vh;
 
-  .col-3 {
-    width: 100%;
-  }
+.row {
+  height: 100%;
+}
 
-  .container {
-    max-width: 300px;
-  }
+section {
+  height: 100%;
+}
 
+// Tweets Nav Bar
 }
 
   #leftMenu {
     font-weight: bold;
     color: #1b1f24;
-    width: 100px;
 
     .nav-link {
       color: #1b1f24;
@@ -153,6 +155,9 @@ body {
       margin: 5px 10px;
     }
 
+    .dropup {
+      margin-top: 450px;
+    }
   }
 
 

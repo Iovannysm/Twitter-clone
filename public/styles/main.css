@@ -100,17 +100,20 @@ body {
   border: none;
 }
 
-#tweetIndex .col-3 {
-  width: 100%;
+#tweetIndex {
+  width: 100vw;
+  height: 100vh;
 }
-#tweetIndex .container {
-  max-width: 300px;
+#tweetIndex .row {
+  height: 100%;
+}
+#tweetIndex section {
+  height: 100%;
 }
 
 #leftMenu {
   font-weight: bold;
   color: #1b1f24;
-  width: 100px;
 }
 #leftMenu .nav-link {
   color: #1b1f24;
@@ -125,6 +128,9 @@ body {
 #leftMenu i {
   font-size: 1.5em;
   margin: 5px 10px;
+}
+#leftMenu .dropup {
+  margin-top: 450px;
 }
 
 /*# sourceMappingURL=main.css.map */
