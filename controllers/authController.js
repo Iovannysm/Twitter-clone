@@ -7,9 +7,9 @@ const { User } = require("../models");
 
 
 
-router.get("/tweets", function(req, res) {
- return res.render("show");
-});
+// router.get("/tweets", function(req, res) {
+//  return res.render("show");
+// });
 
 // New
 
