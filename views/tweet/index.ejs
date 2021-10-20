@@ -5,23 +5,23 @@
     <div class="container-fluid" id="tweetIndex">    
         <div class="row">
         <%- include('../partials/nav/_nav.ejs') %>
-            <section class="col">
-                    <article>
-                        <a href="http://"></a>
-                        <div class="card">
-                            <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <form action="/tweets" method="POST">
+            <section class="col" id="tweetSection">
+                <article>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Home</h5>
+                            <img src="">
+                            <form action="/tweets" method="POST" class="d-flex flex-column">
                                 <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
+                                    <textarea class="form-control" id="tweetContent" name="content" placeholder="What's happening?" rows="3" ></textarea>   
                                 </div>
-                                <input type="submit" value="Tweet" class="btn btn-primary"></input>
-                            
+                            <input type="submit" value="Tweet" class="btn btn-primary align-self-end"></input>
                             </form>
-                            </div>
                         </div>
-                    </article>
+                    </div>
+                </article>
+
+
             </section>
             <section class="col-3">
                     <div class="d-flex flex-column align-items-stretchbg-white">
