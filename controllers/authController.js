@@ -6,11 +6,6 @@ const { User } = require("../models");
 // base url === /
 
 
-
-// router.get("/tweets", function(req, res) {
-//  return res.render("show");
-// });
-
 // New
 
 router.get("/register", function(req, res) {
