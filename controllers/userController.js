@@ -65,6 +65,7 @@ router.delete("/:id", async function(req, res, next){
     await User.findByIdAndDelete(req.params.id);
     return res.redirect("/");
 
+
   } catch (error) {
     console.log(error);
     req.error = error;
