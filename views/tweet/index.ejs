@@ -2,42 +2,30 @@
 <html lang="en">
     <%- include('../partials/_head.ejs', {page: "Dashboard"})%>
 <body>
-    <div class="container row" id="tweetIndex">    
+    <div class="container-fluid" id="tweetIndex">    
+        <div class="row">
         <%- include('../partials/nav/_nav.ejs') %>
-            <section class="container center col">
-                <div class="col">
-                    <article>
-                        <a href="http://"></a>
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <form action="/tweets" method="POST">
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                        <textarea 
-                                        class="form-control"
-                                        name="content"
-                                        id="exampleFormControlTextarea1"
-                                        placeholder="What's happening?"
-                                        ></textarea>
-                                    </div>
-                                    <input type="submit" value="Tweet" class="btn btn-primary"></input>
-                                
-                                </form>
-                            </div>
+            <section class="col" id="tweetSection">
+                <article>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Home</h5>
+                            <img src="">
+                            <form action="/tweets" method="POST" class="d-flex flex-column">
+                                <div class="mb-3">
+                                    <textarea class="form-control" id="tweetContent" name="content" placeholder="What's happening?" rows="3" ></textarea>   
+                                </div>
+                            <input type="submit" value="Tweet" class="btn btn-primary align-self-end"></input>
+                            </form>
                         </div>
-                    </article>
-                    <div class="container-lg">
-                        <article>
-                           <p><%= tweets.content %> </p> 
-                        </article>
                     </div>
-                </div>
+                </article>
+
+
             </section>
-            <section class="container right col">
-                <div class="col">
-                    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" style="width: 380px;">
-                        <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+            <section class="col-3">
+                    <div class="d-flex flex-column align-items-stretchbg-white">
+                        <a href="/" class="d-flex align-items-center p-3 link-dark text-decoration-none border-bottom">
                         <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
                         <span class="fs-5 fw-semibold">List group</span>
                         </a>
@@ -58,9 +46,8 @@
                         </a>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
       </div>
     
 </body>
