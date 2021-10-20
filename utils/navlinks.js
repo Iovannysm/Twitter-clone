@@ -1,6 +1,6 @@
 const routes = [
     {
-        href: "/dashboard",
+        href: "/tweets",
         title: "Home",
     },
     {
