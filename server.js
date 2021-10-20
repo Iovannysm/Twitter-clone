@@ -50,6 +50,8 @@ app.use(rateLimit({
   message: "Please try again later or contact the system admin for more requests.",
 }));
 
+// adds routes for navbar
+app.use(require("./utils/navlinks"));
 
 /* === Routes === */
 
@@ -68,6 +70,9 @@ app.use("/", controller.auth);
 // Tweets
 
 app.use("/tweets", controller.tweet);
+
+
+
 
 
 // == utility routes

@@ -1,0 +1,14 @@
+
+<!-- render routes -->
+<li class="nav-item">
+    <% routes.forEach(route => { %>
+        <a href="<%= route.href %>" class="nav-link text-white" aria-current="page">
+            <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+            <%= route.title %>
+            </a>
+    <% }) %>
+    
+</li>
+
+
+
