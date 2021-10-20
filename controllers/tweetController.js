@@ -39,7 +39,7 @@ router.get("/:id", function (req, res, next) {
 
 // Create
 router.post("/", function (req, res, next) {
-    const data = req.body;
+    const data = req.body.content;
    
    Tweet.create(data, function (error, newTweet) {
       if (error) {
@@ -48,7 +48,7 @@ router.post("/", function (req, res, next) {
         return next();
       }
       console.log(newTweet);
-      res.redirect("/tweet");
+      res.redirect("/tweets");
   });
 });
 

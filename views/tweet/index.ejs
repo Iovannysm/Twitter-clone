@@ -19,15 +19,15 @@
                         <button type="button" class="btn btn-primary">Tweet</button>
                         <hr>
                         <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
-                            <strong></strong>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                            <li><hr class="dropdown-divider"></li>
-                            
-                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                        </ul>
+                            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
+                                <strong></strong>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                                <li><hr class="dropdown-divider"></li>
+                                
+                                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,12 @@
                             <form action="/tweets" method="POST">
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
+                                    <textarea 
+                                    class="form-control"
+                                    name="content"
+                                    id="exampleFormControlTextarea1"
+                                    placeholder="What's happening?"
+                                    ></textarea>
                                 </div>
                                 <input type="submit" value="Tweet" class="btn btn-primary"></input>
                             
