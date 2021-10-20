@@ -1,18 +1,5 @@
-
-<!-- render routes
-<li class="nav-item">
-    <% routes.forEach(route => { %>
-        <a href="<%= route.href %>" class="nav-link" aria-current="page">
-            <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-            <%= route.title %>
-            </a>
-    <% }) %>
-    
-</li> -->
-
-<nav class="container left col-3" id="leftMenu">
-    <div class="col">
-        <div class="d-flex flex-column p-3 bg-light">
+<nav class="col-3 " id="leftMenu">
+        <section class="d-flex flex-column p-3 bg-light">
             <a href="/tweets" class="">
                 <i class="fab fa-twitter icons" id="twitter"></i>
             </a>
@@ -25,19 +12,21 @@
                 </li>
             </ul>
         </div>
-            <button type="button" class="btn btn-primary fw-bold">Tweet</button>
-            <hr>
-            <div class="dropdown">
-            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
-            </a>
-            <ul class="dropdown-menu dropdown-menu-light text-small shadow" aria-labelledby="dropdownUser1">
-                <img src=""> 
-                <p>Name</p>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/logout">Sign out</a></li>
-            </ul>
-            </div>
-        </div>
-    </div>
+        <button type="button" class="btn btn-primary mt-3 fw-bold">Tweet</button>
+            
+            <footer class="dropup">
+                <hr>
+                <a href="#" class="d-flex align-items-center justify-content-around text-decoration-none dropdown-toggle dropdown-toggle-split" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                    <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <p>Name</p>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser1">
+                    <img src=""> 
+                    <p>Name</p>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+                </ul>
+            </footer>
+        </section>
 </nav>
