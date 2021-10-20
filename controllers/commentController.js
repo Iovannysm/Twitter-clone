@@ -2,14 +2,14 @@ const express = require("express");
 
  
 const router = express.Router();
-const { Tweet } = require("../models");
+const { Comment } = require("../models");
 
 // === Index
 router.get("/", function (req, res, next){
-    Tweet.find({}, function(error, allTweets) {
+    Comment.find({}, function(error, allComments) {
         if (error) console.log(error);
             const context = {
-            tweets: allTweets,
+            tweets: allComments,
             };
         return res.render("tweet/index", context);
     });
@@ -20,14 +20,14 @@ router.get("/", function (req, res, next){
 router.get("/:id", function (req, res, next) {
     
 
-    Tweet.findById(req.params.id, function (error, tweet) {
+    Comment.findById(req.params.id, function (error, comment) {
       if (error) {
         req.error = error;
         return next();
       }
   
         const context = {
-          tweet,
+          comment,
           
         };
   
@@ -42,14 +42,14 @@ router.post("/", function (req, res, next) {
     const data = req.body;
     data.user = req.session.currentUser.id;
    
-   Tweet.create(data, function (error, newTweet) {
+   Comment.create(data, function (error, newComment) {
       if (error) {
         console.log(error);
         req.error = error;
         return next();
       }
-      console.log(newTweet);
-      res.redirect("/tweets");
+      console.log(newComment);
+      res.redirect("/tweet");
   });
 });
 
@@ -58,14 +58,14 @@ router.post("/", function (req, res, next) {
 //Delete
 router.delete("/:id", function(req, res, next) {
   
-    Tweet.findByIdAndDelete(req.params.id, function (error, deletedTweet) {
+    Comment.findByIdAndDelete(req.params.id, function (error, deletedComment) {
         if (error) {
           console.log(error);
           req.error = error;
           return next();
         }
 
-        res.redirect("/tweets");
+        res.redirect("/tweet");
     });
 });
 
