@@ -71,7 +71,7 @@ router.post("/login", async function (req, res, next) {
     const match = await bcrypt.compare(req.body.password, foundUser.password);
 
     if (!match){
-      return res.send("Email or password invalid.");
+      return res.redirect("/login");
     }
 
     req.session.currentUser = {
@@ -86,6 +86,7 @@ router.post("/login", async function (req, res, next) {
     return next();
   }
 })
+
 
 // Log out
 router.get("/logout", async function (req, res, next) {

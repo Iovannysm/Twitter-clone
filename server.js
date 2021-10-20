@@ -64,10 +64,13 @@ app.get("/", function (req, res) {
 
 app.use("/", controller.auth);
 
+// User
+
+app.use("/user", require("./utils/authRequired"), controller.user);
 
 // Tweets
 
-app.use("/tweets", controller.tweet);
+app.use("/tweets", require("./utils/authRequired"), controller.tweet);
 
 
 // == utility routes
