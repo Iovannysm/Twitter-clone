@@ -15,6 +15,10 @@ const commentSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: "Tweet",
     required: true,
+  },
+  date: {
+    type: Date,
+    default: Date.now(),
   }
 
 }, 
