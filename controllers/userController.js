@@ -62,7 +62,7 @@ router.put("/:id", function (req, res, next){
 router.delete("/:id", async function(req, res, next){
 
   try {
-    await User.findByIdandDelete(req.params.id);
+    await User.findByIdAndDelete(req.params.id);
     return res.redirect("/");
 
   } catch (error) {
