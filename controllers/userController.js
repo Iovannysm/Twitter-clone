@@ -5,10 +5,11 @@ const { User, Tweet } = require("../models");
 
 // base url === /user
 
+router.use(require("../utils/authRequired"));
+
 router.get("/",  function(req, res, next) {
   res.redirect(`/user/${req.session.currentUser.id}`);
 });
-
 
 
 // Show User Information

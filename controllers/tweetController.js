@@ -4,6 +4,8 @@ const express = require("express");
 const router = express.Router();
 const { Tweet, User } = require("../models");
 
+router.use(require("../utils/authRequired"));
+
 // === Index
 router.get("/", async function (req, res, next){
   try {

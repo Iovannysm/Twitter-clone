@@ -4,17 +4,7 @@ const express = require("express");
 const router = express.Router();
 const { Comment } = require("../models");
 
-// === Index
-// router.get("/", async function (req, res, next){
-
-//     Comment.find({}, function(error, allComments) {
-//         if (error) console.log(error);
-//             const context = {
-//             tweets: allComments,
-//             };
-//         return res.render("tweet/index", context);
-//     })
-// });
+router.use(require("../utils/authRequired"));
 
 
 // Show

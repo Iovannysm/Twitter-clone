@@ -70,15 +70,15 @@ app.use("/", controller.auth);
 
 // User
 
-app.use("/user", require("./utils/authRequired"), controller.user);
+app.use("/user", controller.user);
 
 // Tweets
 
-app.use("/tweets", require("./utils/authRequired"), controller.tweet);
+app.use("/tweets", controller.tweet);
 
 //Comment
 
-app.use("/tweet", require("./utils/authRequired"), controller.comment);
+app.use("/tweet", controller.comment);
 
 
 
