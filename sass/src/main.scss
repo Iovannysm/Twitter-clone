@@ -180,6 +180,7 @@ section {
 // Tweets Middle Section
 
 #tweetSection {
+  overflow: auto;
 
   input {
     border-radius: 20px;
@@ -221,9 +222,16 @@ section {
 
   #time {
     color: rgba(139, 139, 139, 0.89);
+    margin-left: 10px;
   }
 
   .buttonDiv {
     margin-left: auto;
   }
+
+  #delete {
+    margin-left: 10px;
+    color: red;
+  }
+
 }
