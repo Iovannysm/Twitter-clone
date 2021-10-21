@@ -34,8 +34,12 @@ router.post("/", function (req, res, next) {
         req.error = error;
         return next();
       }
+      const context = {
+        data,
+        comment: newComment,
+      }
       console.log(newComment);
-      res.redirect(`/tweets/${data.tweet}`);
+      return res.render("tweet/show", context);
   });
 });
 
