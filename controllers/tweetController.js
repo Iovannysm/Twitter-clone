@@ -43,31 +43,50 @@ router.get("/", async function (req, res, next){
   
 });
 
-
 // Show
-router.get("/:id", function (req, res, next) {
-    
-  
-  Tweet.findById(req.params.id, function (error, tweet) {
-      if (error) {
-        req.error = error;
-        return next();
-      }
+router.get("/:id", async function (req, res, next) {
+  try {
 
-      Comment.find({tweet: tweet.id}, function (error, foundComment) {
-        if (error) {
-          req.error = error;
-          return next();
-        }
-        
-        const context = {
-          tweet,
-          comments: foundComment,
-          
-        };
-        return res.render("tweet/show", context);
-      }).sort("-createdAt")
-    });
+    let query = {};
+
+    if (req.query.q) {
+      query = {
+        $or: [
+          {
+            content: {
+              $regex: req.query.q,
+              $options: "i",
+            }
+          },
+        ]
+      };
+    };
+
+    const tweet = await Tweet.findById(req.params.id).populate("user");
+    const allComments = await Comment.find(
+      { $and: 
+        [
+          {
+            tweet: req.params.id
+          },
+          query
+        ]
+      })
+    .populate("user")
+    .sort("-createdAt");
+    const allUsers = await User.find({});  
+    const context = {
+      tweet: tweet,
+      comments: allComments,
+      users: allUsers,
+      }
+    return res.render("tweet/show", context);
+  } catch (error) {
+      console.log(error);
+      req.error = error;
+      next();
+    }
+  
 });
 
 

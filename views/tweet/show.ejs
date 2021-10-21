@@ -4,11 +4,10 @@
 <body>
     <div class="container-fluid" id="tweetIndex">    
         <div class="row">
-            <p> <%= user.avatar %></p>
         <%- include('../partials/nav/_nav.ejs')%>
             <section class="col" id="tweetSection">
                 <article class="tweet">
-                    <div class="card mb-0 rounded-0 border-top-0">
+                    <div class="card mb-0 py-3 rounded-0 border-top-0">
                         <div class="card-body d-flex flex-row">
                           <img src="<%= user.avatar%>" id="avatar" class="rounded-circle">
                           <a href="/tweets/<%= tweet.id %>"><h5 class="card-title"><%= tweet.user.username %>
@@ -69,7 +68,7 @@
                                   <p class="card-text"><%= comment.content%></p>
                                   </a>
                                   <div class="d-flex flex-column buttonDiv">
-                                    <% if (tweet.user.id == user.id ) { %>
+                                    <% if (comment.user.id == user.id ) { %>
                                         <div class="btn-group dropend">
                                             <button type="button" class="btn btn-light border-0" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-h"></i>
