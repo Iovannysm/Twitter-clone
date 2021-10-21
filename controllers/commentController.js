@@ -8,7 +8,7 @@ router.use(require("../utils/authRequired"));
 
 
 // Show
-router.get("/:id", async function (req, res, next) {
+router.get("/:id",  function (req, res, next) {
 
    
     Comment.find(req.params.id, function(error, allComments){
@@ -28,7 +28,6 @@ router.get("/:id", async function (req, res, next) {
 router.post("/", function (req, res, next) {
     const data = req.body;
     data.user = req.session.currentUser.id;
-   
    Comment.create(data, function (error, newComment) {
       if (error) {
         console.log(error);
@@ -36,7 +35,7 @@ router.post("/", function (req, res, next) {
         return next();
       }
       console.log(newComment);
-      res.redirect("/tweets");
+      res.redirect(`/tweets/${data.tweet}`);
   });
 });
 
@@ -52,7 +51,7 @@ router.delete("/:id", function(req, res, next) {
           return next();
         }
 
-        res.redirect("/tweets");
+        res.redirect(`/tweets/${data.tweet}`);
     });
 });
 
