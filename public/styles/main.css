@@ -204,7 +204,8 @@ body {
   background-color: var(--primary);
   border: 1px solid var(--primary);
   border-radius: 0;
-  font-size: 14px;
+  font-size: 13px;
+  padding: 10px;
 }
 #searchSection .searchBar .btn {
   font-size: 14px;
