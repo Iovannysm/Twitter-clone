@@ -144,6 +144,9 @@ body {
   padding: 10px;
 }
 
+#tweetSection {
+  overflow: auto;
+}
 #tweetSection input {
   border-radius: 20px;
   background-color: var(--primary);
@@ -176,9 +179,14 @@ body {
 }
 #tweetSection #time {
   color: rgba(139, 139, 139, 0.89);
+  margin-left: 10px;
 }
 #tweetSection .buttonDiv {
   margin-left: auto;
+}
+#tweetSection #delete {
+  margin-left: 10px;
+  color: red;
 }
 
 /*# sourceMappingURL=main.css.map */
