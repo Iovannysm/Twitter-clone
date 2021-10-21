@@ -50,6 +50,10 @@
                             <input type="email" class="form-control" name="email" placeholder="name@email.com" aria-label="email" aria-describedby="email" value="<%= user.email %>" required />
                             <label for="email" class="form-label">Email address</label>
                         </div>
+                        <div class="form-floating w-75 mb-4">
+                          <input type="text" class="form-control" name="avatar" placeholder="Paste the image address e.g. i.imgur.com/picture" aria-label="avatar" aria-describedby="avatar" value="<%= user.avatar %>" required />
+                          <label for="avatar" class="form-label">Avatar</label>
+                      </div>
                         <button type="submit" class="btn btn-primary w-75 fw-bold mb-3">Confirm Changes</button>
                     </form>
                 </div>
