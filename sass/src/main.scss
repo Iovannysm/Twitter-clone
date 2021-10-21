@@ -235,3 +235,33 @@ section {
   }
 
 }
+
+#searchSection {
+
+  .searchBar {
+    margin-top: 10px;
+    border: 1px solid var(--neutralgrey);
+    border-radius: 10px;
+    overflow:hidden;
+    padding-left: 10px;
+
+    i {
+      font-size: 1.3em;
+      padding-top: 10px;
+    }
+    a {
+      background-color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 0;
+      font-size: 13px;
+      padding: 10px;
+    }
+    .btn {
+      font-size: 14px;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 0 0;
+    }
+  }
+}
