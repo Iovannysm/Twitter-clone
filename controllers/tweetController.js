@@ -46,7 +46,9 @@ router.get("/", async function (req, res, next){
 
 // Show
 router.get("/:id", function (req, res, next) {
-    Tweet.findById(req.params.id, function (error, tweet) {
+    
+  
+  Tweet.findById(req.params.id, function (error, tweet) {
       if (error) {
         req.error = error;
         return next();
