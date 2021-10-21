@@ -2,17 +2,24 @@ const express = require("express");
 
  
 const router = express.Router();
-const { Tweet } = require("../models");
+const { Tweet, User } = require("../models");
 
 // === Index
-router.get("/", function (req, res, next){
-    Tweet.find({}, function(error, allTweets) {
-        if (error) console.log(error);
-            const context = {
-            tweets: allTweets,
-            };
-        return res.render("tweet/index", context);
-    });
+router.get("/", async function (req, res, next){
+  try {
+    const allTweets = await Tweet.find({}).populate("user");
+    const allUsers = await User.find({}); 
+          const context = {
+          tweets: allTweets,
+          users: allUsers,
+          }
+      return res.render("tweet/index", context);
+  } catch (error) {
+      console.log(error);
+      req.error = error;
+      next();
+  } 
+  
 });
 
 

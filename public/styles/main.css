@@ -140,5 +140,12 @@ body {
   color: white;
   width: 13%;
 }
+#tweetSection a {
+  text-decoration: none;
+  color: black;
+}
+#tweetSection button {
+  background-color: white;
+}
 
 /*# sourceMappingURL=main.css.map */
