@@ -7,11 +7,13 @@ const { Tweet, User } = require("../models");
 // === Index
 router.get("/", async function (req, res, next){
   try {
-    const allTweets = await Tweet.find({}).populate("user");
+    const allTweets = await Tweet.find({}).populate("user").sort("-createdAt");
     const allUsers = await User.find({}); 
+    const myUser = req.session.currentUser;
           const context = {
           tweets: allTweets,
           users: allUsers,
+          me: myUser, 
           }
       return res.render("tweet/index", context);
   } catch (error) {

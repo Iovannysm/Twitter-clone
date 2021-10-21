@@ -6,7 +6,8 @@
 :root {
   --primary: rgb(74, 153, 233);
   --neutralgrey: rgb(209, 217, 221);
-  --darkneutralgrey: rgb(230, 230, 230);
+  --lightgrey: rgb(230, 230, 230);
+  --lightestgrey: rgba(240, 240, 240, 0.753);
 }
 
 body {
@@ -66,7 +67,7 @@ body {
   transition: background-color 0.5s;
 }
 .right-side button:hover {
-  background-color: var(--darkneutralgrey);
+  background-color: var(--lightgrey);
 }
 .right-side footer h6 {
   margin: 0 auto;
@@ -114,6 +115,7 @@ body {
 #leftMenu {
   font-weight: bold;
   color: #1b1f24;
+  position: relative;
 }
 #leftMenu .nav-link {
   color: #1b1f24;
@@ -130,7 +132,10 @@ body {
   margin: 5px 10px;
 }
 #leftMenu .dropup {
-  margin-top: 450px;
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  padding: 10px;
 }
 
 #tweetSection input {
@@ -138,6 +143,7 @@ body {
   background-color: var(--primary);
   border: 1px solid var(--primary);
   color: white;
+  font-weight: bold;
   width: 13%;
 }
 #tweetSection a {
@@ -146,6 +152,17 @@ body {
 }
 #tweetSection button {
   background-color: white;
+}
+#tweetSection .card.rounded-0 {
+  border: 1px solid var(--lightestgrey);
+}
+#tweetSection h5 {
+  font-size: 16px;
+}
+#tweetSection #avatar {
+  width: 50px;
+  border-radius: 40px;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
