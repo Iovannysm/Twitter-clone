@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const { User } = require("../models");
+const { User, Tweet } = require("../models");
 
 // base url === /user
 
@@ -46,11 +46,18 @@ router.get("/:id/edit", function(req, res, next){
 
 // Update User in Database
 
-router.put("/:id", function (req, res, next){
+router.put("/:id", async function (req, res, next){
+
+  const salt = await bcrypt.genSalt(10);
+
+  const hash = await bcrypt.hash(req.body.password, salt);
+
+  req.body.password = hash;
+
   User.findByIdAndUpdate(
     req.params.id,
-    req.body,
-    {new:true},
+    req.body, 
+    { new: true },
     function (error, updatedUser){
       if (error) {
         console.log(error);
@@ -68,6 +75,7 @@ router.put("/:id", function (req, res, next){
 router.delete("/:id", async function(req, res, next){
 
   try {
+    await Tweet.deleteMany({user: req.params.id});
     await User.findByIdAndDelete(req.params.id);
     return res.redirect("/");
 
