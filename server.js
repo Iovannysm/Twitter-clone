@@ -76,14 +76,9 @@ app.use("/user", controller.user);
 
 app.use("/tweets", controller.tweet);
 
-//Comment
-
-app.use("/tweet", controller.comment);
 
 
-
-
-
+app.use("/comments", require("./utils/authRequired"), controller.comment);
 // == utility routes
 
 app.get("/*", function (req, res) {

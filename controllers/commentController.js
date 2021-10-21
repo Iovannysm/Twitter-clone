@@ -10,25 +10,17 @@ router.use(require("../utils/authRequired"));
 // Show
 router.get("/:id", async function (req, res, next) {
 
-    try {
-    
-        const Tweet = await Tweet.findById(req.params.id).populate("user");
-        const allComments = await Comment.find({tweet: req.params.id}).populate("user").sort("-createdAt");
-        const allUsers = await User.find({});       
-              const context = {
-              tweets: Tweet,
-              comments: allComments,
-              users: allUsers,
-              
-              }
-              console.log(context);
-          return res.render("tweet/show", context);
-    } catch (error) {
-          console.log(error);
-          req.error = error;
-          next();
-    } 
-    
+   
+    Comment.find(req.params.id, function(error, allComments){
+        if (error) {
+            req.error = error;
+            return next();
+        }
+
+        console.log(allComments);
+        res.render("/tweets");
+
+    });
 });
 
 
@@ -44,7 +36,7 @@ router.post("/", function (req, res, next) {
         return next();
       }
       console.log(newComment);
-      res.redirect("/tweet");
+      res.redirect("/tweets");
   });
 });
 
@@ -60,7 +52,7 @@ router.delete("/:id", function(req, res, next) {
           return next();
         }
 
-        res.redirect("/tweet");
+        res.redirect("/tweets");
     });
 });
 
