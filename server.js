@@ -76,6 +76,10 @@ app.use("/user", require("./utils/authRequired"), controller.user);
 
 app.use("/tweets", require("./utils/authRequired"), controller.tweet);
 
+//Comment
+
+app.use("/tweet", require("./utils/authRequired"), controller.comment);
+
 
 
 
