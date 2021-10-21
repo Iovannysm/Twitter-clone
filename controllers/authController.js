@@ -73,6 +73,8 @@ router.post("/login", async function (req, res, next) {
       id: foundUser._id,
       username: foundUser.username,
     }
+
+    
     return res.redirect("/tweets");
 
   } catch (error) {

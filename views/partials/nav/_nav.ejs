@@ -1,5 +1,5 @@
-<nav class="col-3 " id="leftMenu">
-        <section class="d-flex flex-column p-3 bg-light">
+<nav class="col-3 bg-white" id="leftMenu">
+        <section class="d-flex flex-column p-3 bg-white">
             <a href="/tweets" class="">
                 <i class="fab fa-twitter icons" id="twitter"></i>
             </a>
@@ -16,14 +16,16 @@
             
             <footer class="dropup">
                 <hr>
-                <a href="#" class="d-flex align-items-center justify-content-around text-decoration-none dropdown-toggle dropdown-toggle-split" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <a href="" class="d-flex align-items-center justify-content-around text-decoration-none dropdown-toggle dropdown-toggle-split" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="visually-hidden">Toggle Dropdown</span>
-                    <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <p>Name</p>
+                    <img src="<%= image %>" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <span><%= name %></span>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser1">
-                    <img src=""> 
-                    <p>Name</p>
+                <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end text-small shadow d-flex flex-column" aria-labelledby="dropdownUser1">
+                    <div class="d-flex flex-row justify-content-start align-items-center p-2">
+                    <img src="<%= image %>" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <span><%= name %></span>
+                    </div>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="/logout">Sign out</a></li>
                 </ul>
