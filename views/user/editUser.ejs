@@ -20,6 +20,13 @@
     <script>
       $(document).ready(function(){
         $("#editModal").modal('show');
+        $("#avatar").on("change", (event) => {
+          if (event.currentTarget.value != "") {
+              $("#previewImage").attr("src", event.currentTarget.value);
+          } else {
+            $("#previewImage").attr("src","https://i.imgur.com/QWC8H7W.png");
+          }
+        })
       });
     </script>
     <title>Twitter - Edit User</title>
@@ -36,9 +43,13 @@
                     </div>
                 <div class="modal-body d-flex flex-column justify-content-center align-items-center">
                     <h5 class="modal-title mb-3" id="editModalLabel">Edit your Account</h5>
-                    
+                    <img src="<%= user.avatar %>" id="previewImage" class="rounded-circle">
                     <form action="/user/<%= user.id %>?_method=PUT" method="POST" class="w-100 d-flex flex-column justify-content-center align-items-center">
-                        <div class="form-floating w-75 mb-3">
+                      <div class="form-floating w-75 mb-4">
+                        <input type="text" class="form-control" name="avatar" id="avatar" placeholder="Paste the image address e.g. i.imgur.com/picture" aria-label="avatar" aria-describedby="avatar" value="<%= user.avatar %>" required />
+                        <label for="avatar" class="form-label">Avatar</label>
+                      </div>  
+                      <div class="form-floating w-75 mb-3">
                             <input type="text" class="form-control" name="username" placeholder="username" aria-label="username" aria-describedby="username" value="<%= user.username %>" required />
                             <label for="username" class="form-label">Username</label>
                         </div>
@@ -50,10 +61,7 @@
                             <input type="email" class="form-control" name="email" placeholder="name@email.com" aria-label="email" aria-describedby="email" value="<%= user.email %>" required />
                             <label for="email" class="form-label">Email address</label>
                         </div>
-                        <div class="form-floating w-75 mb-4">
-                          <input type="text" class="form-control" name="avatar" placeholder="Paste the image address e.g. i.imgur.com/picture" aria-label="avatar" aria-describedby="avatar" value="<%= user.avatar %>" required />
-                          <label for="avatar" class="form-label">Avatar</label>
-                      </div>
+
                         <button type="submit" class="btn btn-primary w-75 fw-bold mb-3">Confirm Changes</button>
                     </form>
                 </div>
