@@ -4,7 +4,7 @@
 <body>
     <div class="container-fluid" id="tweetIndex">    
         <div class="row">
-        <%- include('../partials/nav/_nav.ejs', {image: myUser.avatar, name: myUser.username})%>
+        <%- include('../partials/nav/_nav.ejs', {image: user.avatar, name: user.username})%>
             <section class="col" id="tweetSection">
                 <article>
                     <div class="card rounded-0">
@@ -12,7 +12,7 @@
                             <h4 class="card-title fw-bold mb-3">Home</h5>
                             
                             <div class="d-flex justify-content-around">
-                            <img src="<%= myUser.avatar %>" class="rounded-circle">
+                            <img src="<%= user.avatar %>" class="rounded-circle">
                             <form action="/tweets" method="POST" class="d-flex flex-column">
                                 <div class="mb-3">
                                     <textarea class="form-control" id="tweetContent" name="content" placeholder="What's happening?" rows="3" cols="65" ></textarea>   

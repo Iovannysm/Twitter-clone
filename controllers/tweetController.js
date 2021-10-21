@@ -10,11 +10,9 @@ router.get("/", async function (req, res, next){
     
     const allTweets = await Tweet.find({}).populate("user").sort("-createdAt");
     const allUsers = await User.find({});
-    const myUser = await User.findById(req.session.currentUser.id);
           const context = {
           tweets: allTweets,
           users: allUsers,
-          myUser,
           }
           console.log(context);
       return res.render("tweet/index", context);
