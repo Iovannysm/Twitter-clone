@@ -189,8 +189,28 @@ body {
   color: red;
 }
 
-#searchSection input {
-  border-left: 0;
+#searchSection .searchBar {
+  margin-top: 10px;
+  border: 1px solid var(--neutralgrey);
+  border-radius: 10px;
+  overflow: hidden;
+  padding-left: 10px;
+}
+#searchSection .searchBar i {
+  font-size: 1.3em;
+  padding-top: 10px;
+}
+#searchSection .searchBar a {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 0;
+  font-size: 14px;
+}
+#searchSection .searchBar .btn {
+  font-size: 14px;
+}
+#searchSection .searchBar .form-control:focus {
+  box-shadow: 0 0 0 0;
 }
 
 /*# sourceMappingURL=main.css.map */

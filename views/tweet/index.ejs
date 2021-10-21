@@ -9,7 +9,7 @@
                 <article>
                     <div class="card rounded-0">
                         <div class="card-body d-flex flex-column">
-                            <h4 class="card-title fw-bold mb-3">Home</h5>
+                            <h4 class="card-title fw-bold mb-3">Home</h4>
                             
                             <div class="d-flex justify-content-around">
                             <img src="<%= user.avatar %>" class="rounded-circle">
@@ -65,24 +65,15 @@
                 
                 <form action="" method="GET">
                     <div class="form-group">
-                        <div class="input-group">
+                        <div class="input-group searchBar">
                           <span class="input-group-addon">
                             <i class="fas fa-search"></i>
                           </span>
-                          <input type="search" class="form-control border-left border-primary" placeholder="Search tweets" aria-label="search" aria-describedby="search">
+                          <input name="q" type="search" class="form-control border-0" placeholder="Search tweets" aria-label="search" aria-describedby="search">
+                          <input type="submit" class="btn btn-light" value="Search">
+                          <a href="/tweets" class="btn btn-light"> Reset</a>
                         </div>
                     </div>
-
-
-  
-
-                    <div class="input-group">
-                        <input name="q" type="search" class="form-control border-left-0" placeholder="Search tweets">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent"><i class="fas fa-search"></i></span>
-                        </div>
-                        <input type="submit" class="btn btn-light" value="Search">
-                        <a href="/tweets" class="btn btn-info"> Reset</a>
                     </div>
                 </form>
 

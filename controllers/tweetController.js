@@ -10,7 +10,22 @@ router.use(require("../utils/authRequired"));
 router.get("/", async function (req, res, next){
   try {
     
-    const allTweets = await Tweet.find({}).populate("user").sort("-createdAt");
+    let query = {};
+
+    if (req.query.q) {
+      query = {
+        $or: [
+          {
+            content: {
+              $regex: req.query.q,
+              $options: "i",
+            }
+          },
+        ]
+      };
+    };
+
+    const allTweets = await Tweet.find(query).populate("user").sort("-createdAt");
     const allComments = await Comment.find({tweet: req.params.id}).populate("user").sort("-createdAt");
     const allUsers = await User.find({});
           const context = {
