@@ -164,7 +164,6 @@ section {
 
 #tweetSection {
 
-
   input {
     border-radius: 20px;
     background-color: var(--primary);
@@ -172,5 +171,14 @@ section {
     color: white;
     width: 13%;
   } 
+
+  a {
+    text-decoration: none;
+    color:black;
+  }
+
+  button {
+    background-color: white;
+  }
 
 }

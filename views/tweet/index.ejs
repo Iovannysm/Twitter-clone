@@ -20,7 +20,24 @@
                         </div>
                     </div>
                 </article>
+                
 
+            <% for (let i = 0; i < tweets.length; i++) { %>
+            <% const tweet = tweets[i]; %>        
+                  
+                <article class="tweet">
+                    <div class="card mb-3">
+                        <div class="card-body d-flex flex-column">
+                          <img src="<%= tweet.image %>">
+                          <a href="/tweets/<%= tweet.id %>"><h5 class="card-title"><%= tweet.user.username %> <% tweet.date %></h5>
+                          <p class="card-text"><%= tweet.content%></p>
+                          </a>
+                          <a href="/comment" class="align-self-end"><button class="btn btn-light buttons fw-bold"><i class="far fa-comment"></i></button></a>
+                        </div>
+                      </div>
+                </article>
+
+            <% } %>
 
             </section>
             <section class="col-3">
