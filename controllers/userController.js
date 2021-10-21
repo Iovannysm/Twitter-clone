@@ -76,6 +76,7 @@ router.put("/:id", async function (req, res, next){
 router.delete("/:id", async function(req, res, next){
 
   try {
+    // await Comment.deleteMany({user: req.params.id});
     await Tweet.deleteMany({user: req.params.id});
     await User.findByIdAndDelete(req.params.id);
     return res.redirect("/");

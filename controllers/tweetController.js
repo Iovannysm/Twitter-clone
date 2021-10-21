@@ -64,7 +64,7 @@ router.get("/:id", function (req, res, next) {
           
         };
         return res.render("tweet/show", context);
-      })
+      }).sort("-createdAt")
     });
 });
 
