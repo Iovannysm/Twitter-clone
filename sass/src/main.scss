@@ -9,6 +9,7 @@
   --neutralgrey: rgb(209, 217, 221);
   --lightgrey: rgb(230, 230, 230);
   --lightestgrey: rgba(240, 240, 240, 0.753);
+  --darkerlightgrey: rgb(239,243,244);
 }
 
 body {
@@ -196,6 +197,10 @@ section {
     color:black;
   }
   
+  h6 {
+    margin-left: 70px;
+  }
+
 
   button {
     background-color: white;
@@ -216,13 +221,8 @@ section {
   }
   
   #commentLink {
-    margin-left: auto;
+    margin: 0 auto;
 
-  }
-
-  #time {
-    color: rgba(139, 139, 139, 0.89);
-    margin-left: 10px;
   }
 
   .buttonDiv {
@@ -233,21 +233,26 @@ section {
     margin-left: 10px;
     color: red;
   }
-
 }
 
 #searchSection {
 
   .searchBar {
     margin-top: 10px;
-    border: 1px solid var(--neutralgrey);
-    border-radius: 10px;
+    border-radius: 30px;
     overflow:hidden;
-    padding-left: 10px;
+    padding-left: 15px;
+    background-color: var(--darkerlightgrey);
+
+    input {
+      background-color: var(--darkerlightgrey);
+    }
 
     i {
-      font-size: 1.3em;
-      padding-top: 10px;
+      font-size: 1.2em;
+      padding-top: 12px;
+      color: rgba(139, 139, 139, 0.89);
+      
     }
     a {
       background-color: var(--primary);

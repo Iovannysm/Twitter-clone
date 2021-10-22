@@ -11,15 +11,15 @@
                         <div class="card-body d-flex flex-row">
                           <img src="<%= tweet.user.avatar%>" id="avatar" class="rounded-circle">
                           <a href="/tweets/<%= tweet.id %>"><h5 class="card-title"><%= tweet.user.username %>
-                            <%  let time = tweet.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); %>
-                            <span id="time"><%= time %></span></h5>
+                            <span class="text-muted ml-3 fw-light small">@<%= tweet.user.username %></span></h5>
                           <p class="card-text"><%= tweet.content%></p>
+                          <span class="ml-0 text-muted fw-light"><%= tweet.date.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day:'numeric', year:'numeric', hour:'numeric', minute:'numeric', timeZoneName: 'short' } ) %></span>
                           </a>
                           <div class="d-flex flex-column buttonDiv">
                             <% if (tweet.user.id == user.id ) { %>
                                 <div class="btn-group dropend">
                                     <button type="button" class="btn btn-light border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-h"></i>
+                                        <i class="fas fa-ellipsis-h text-muted"></i>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li>
@@ -30,7 +30,6 @@
                                 </div>
                             <% } %>                            
                             </form>
-                            <a href="/tweets/<%= tweet.id %>" class="align-self-end" id="commentLink"><button class="btn btn-light buttons fw-bold border-0"><i class="far fa-comment"></i></button></a>
                           </div>
                         </div>
                       </div>
@@ -41,6 +40,7 @@
                         <div class="card-body d-flex flex-column">
                             <h4 class="card-title fw-bold mb-3"></h4>
                             
+                            <h6 class="fw-normal ml-3 text-muted">Replying to @<%= tweet.user.username %></h6>
                             <div class="d-flex justify-content-around">
                             <img src="<%= user.avatar %>" class="rounded-circle">
                             <form action="/comments" method="POST" class="d-flex flex-column">
@@ -55,6 +55,11 @@
                     </div>
                 </article>
 
+                <% if (comments.length < 1) { %>
+                <h3 class="py-3 text-center">No search results found.</h3>
+
+                <% } else { %>
+
                 <% for (let i = 0; i < comments.length; i++) { %>
                     <% const comment = comments[i]; %>        
                           
@@ -63,15 +68,15 @@
                                 <div class="card-body d-flex flex-row">
                                   <img src="<%= comment.user.avatar%>" id="avatar" class="rounded-circle">
                                   <a><h5 class="card-title"><%= comment.user.username %>
-                                    <%  let time = comment.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); %>
-                                    <span id="time"><%= time %></span></h5>
+                                    <span class="text-muted ml-3 fw-light small">@<%= tweet.user.username %></span></h5>
                                   <p class="card-text"><%= comment.content%></p>
+                                  <span class="ml-0 text-muted fw-light"><%= tweet.date.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day:'numeric', year:'numeric', hour:'numeric', minute:'numeric', timeZoneName: 'short' } ) %></span>
                                   </a>
                                   <div class="d-flex flex-column buttonDiv">
                                     <% if (comment.user.id == user.id ) { %>
                                         <div class="btn-group dropend">
                                             <button type="button" class="btn btn-light border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-h"></i>
+                                                <i class="fas fa-ellipsis-h text-muted"></i>
                                             </button>
                                             <ul class="dropdown-menu">
                                                 <li>
@@ -88,8 +93,7 @@
                         </article>
         
                     <% } %>
-        
-                
+                <% } %>
 
             </section>
             <section class="col-3" id="searchSection">
@@ -100,9 +104,8 @@
                           <span class="input-group-addon">
                             <i class="fas fa-search"></i>
                           </span>
-                          <input name="q" type="search" class="form-control border-0" placeholder="Search tweets" aria-label="search" aria-describedby="search">
-                          <input type="submit" class="btn btn-light" value="Search">
-                          <a href="/tweets" class="btn btn-light"> Reset</a>
+                          <input name="q" type="search" class="form-control border-0" placeholder="Search comments" aria-label="search" aria-describedby="search">
+                          <a href="/tweets" class="btn btn-light text-white"> Reset</a>
                         </div>
                     </div>
                     </div>

@@ -8,6 +8,7 @@
   --neutralgrey: rgb(209, 217, 221);
   --lightgrey: rgb(230, 230, 230);
   --lightestgrey: rgba(240, 240, 240, 0.753);
+  --darkerlightgrey: rgb(239,243,244);
 }
 
 body {
@@ -159,6 +160,9 @@ body {
   text-decoration: none;
   color: black;
 }
+#tweetSection h6 {
+  margin-left: 70px;
+}
 #tweetSection button {
   background-color: white;
 }
@@ -175,11 +179,7 @@ body {
   border: 1px solid var(--lightgrey);
 }
 #tweetSection #commentLink {
-  margin-left: auto;
-}
-#tweetSection #time {
-  color: rgba(139, 139, 139, 0.89);
-  margin-left: 10px;
+  margin: 0 auto;
 }
 #tweetSection .buttonDiv {
   margin-left: auto;
@@ -191,14 +191,18 @@ body {
 
 #searchSection .searchBar {
   margin-top: 10px;
-  border: 1px solid var(--neutralgrey);
-  border-radius: 10px;
+  border-radius: 30px;
   overflow: hidden;
-  padding-left: 10px;
+  padding-left: 15px;
+  background-color: var(--darkerlightgrey);
+}
+#searchSection .searchBar input {
+  background-color: var(--darkerlightgrey);
 }
 #searchSection .searchBar i {
-  font-size: 1.3em;
-  padding-top: 10px;
+  font-size: 1.2em;
+  padding-top: 12px;
+  color: rgba(139, 139, 139, 0.89);
 }
 #searchSection .searchBar a {
   background-color: var(--primary);
