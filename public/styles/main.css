@@ -6,7 +6,8 @@
 :root {
   --primary: rgb(74, 153, 233);
   --neutralgrey: rgb(209, 217, 221);
-  --darkneutralgrey: rgb(230, 230, 230);
+  --lightgrey: rgb(230, 230, 230);
+  --lightestgrey: rgba(240, 240, 240, 0.753);
 }
 
 body {
@@ -66,7 +67,7 @@ body {
   transition: background-color 0.5s;
 }
 .right-side button:hover {
-  background-color: var(--darkneutralgrey);
+  background-color: var(--lightgrey);
 }
 .right-side footer h6 {
   margin: 0 auto;
@@ -98,6 +99,119 @@ body {
 
 #modal-header {
   border: none;
+}
+
+#previewImage {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+#tweetIndex {
+  width: 100vw;
+  height: 100vh;
+}
+#tweetIndex .row {
+  height: 100%;
+}
+#tweetIndex section {
+  height: 100%;
+}
+
+#leftMenu {
+  font-weight: bold;
+  color: #1b1f24;
+  position: relative;
+}
+#leftMenu .nav-link {
+  color: #1b1f24;
+  text-decoration: none;
+}
+#leftMenu button {
+  border-radius: 20px;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  color: white;
+}
+#leftMenu i {
+  font-size: 1.5em;
+  margin: 5px 10px;
+}
+#leftMenu .dropup {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  padding: 10px;
+}
+
+#tweetSection {
+  overflow: auto;
+}
+#tweetSection input {
+  border-radius: 20px;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  color: white;
+  font-weight: bold;
+  width: 13%;
+}
+#tweetSection a {
+  text-decoration: none;
+  color: black;
+}
+#tweetSection button {
+  background-color: white;
+}
+#tweetSection .card.rounded-0 {
+  border: 1px solid var(--lightestgrey);
+}
+#tweetSection h5 {
+  font-size: 16px;
+}
+#tweetSection img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border: 1px solid var(--lightgrey);
+}
+#tweetSection #commentLink {
+  margin-left: auto;
+}
+#tweetSection #time {
+  color: rgba(139, 139, 139, 0.89);
+  margin-left: 10px;
+}
+#tweetSection .buttonDiv {
+  margin-left: auto;
+}
+#tweetSection #delete {
+  margin-left: 10px;
+  color: red;
+}
+
+#searchSection .searchBar {
+  margin-top: 10px;
+  border: 1px solid var(--neutralgrey);
+  border-radius: 10px;
+  overflow: hidden;
+  padding-left: 10px;
+}
+#searchSection .searchBar i {
+  font-size: 1.3em;
+  padding-top: 10px;
+}
+#searchSection .searchBar a {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 0;
+  font-size: 13px;
+  padding: 10px;
+}
+#searchSection .searchBar .btn {
+  font-size: 14px;
+}
+#searchSection .searchBar .form-control:focus {
+  box-shadow: 0 0 0 0;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -5,11 +5,7 @@ const commentSchema = new mongoose.Schema({
   content: {
     type: String,
     required: [true, "Please fill out your tweet"],
-  },
-  date: {
-    type: Date,
-    default: Date.now(),
-  },
+  }, 
   user: {
     type: mongoose.Types.ObjectId,
     ref: "User",
@@ -19,6 +15,10 @@ const commentSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: "Tweet",
     required: true,
+  },
+  date: {
+    type: Date,
+    default: Date.now(),
   }
 
 }, 

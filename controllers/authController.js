@@ -6,11 +6,6 @@ const { User } = require("../models");
 // base url === /
 
 
-
-router.get("/dashboard", function(req, res) {
- return res.render("show");
-});
-
 // New
 
 router.get("/register", function(req, res) {
@@ -43,7 +38,7 @@ router.post("/register", async function(req, res, next) {
 
     console.log(foundUser);
 
-    return res.redirect("/dashboard");
+    return res.redirect("/tweets");
 
   } catch (error) {
       console.log(error);
@@ -71,14 +66,16 @@ router.post("/login", async function (req, res, next) {
     const match = await bcrypt.compare(req.body.password, foundUser.password);
 
     if (!match){
-      return res.send("Email or password invalid.");
+      return res.redirect("/login");
     }
 
     req.session.currentUser = {
       id: foundUser._id,
       username: foundUser.username,
     }
-    return res.redirect("/dashboard");
+
+    
+    return res.redirect("/tweets");
 
   } catch (error) {
     console.log(error);
@@ -86,6 +83,7 @@ router.post("/login", async function (req, res, next) {
     return next();
   }
 })
+
 
 // Log out
 router.get("/logout", async function (req, res, next) {

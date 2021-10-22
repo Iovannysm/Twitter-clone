@@ -27,6 +27,8 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
+app.use(methodOverride('_method'));
+
 //Session config to create cookies
 app.use(session({
   store: MongoStore.create({mongoUrl: process.env.MONGODB_URI}),
@@ -50,6 +52,8 @@ app.use(rateLimit({
   message: "Please try again later or contact the system admin for more requests.",
 }));
 
+// adds routes for navbar
+app.use(require("./utils/navlinks"));
 
 /* === Routes === */
 
@@ -64,12 +68,17 @@ app.get("/", function (req, res) {
 
 app.use("/", controller.auth);
 
+// User
+
+app.use("/user", controller.user);
 
 // Tweets
 
 app.use("/tweets", controller.tweet);
 
 
+
+app.use("/comments", require("./utils/authRequired"), controller.comment);
 // == utility routes
 
 app.get("/*", function (req, res) {
