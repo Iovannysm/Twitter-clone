@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const { User, Tweet } = require("../models");
+const { User, Tweet, Comment } = require("../models");
 
 // base url === /user
 
