@@ -1,9 +1,8 @@
 # Twitter Clone Reverse Engineer
 > A reverse engineer of the popular social media application Twitter. Using Node.js, MongoDB, Express, EJS, and SASS, the clone works in conjunction to allow features such as user account creation and editing, tweeting, and commenting.
-> Live demo [_here_](https://www.example.com). 
+> Live demo [_here_](https://twitter-reverse-engineer.herokuapp.com/). 
 
 ## Table of Contents
-* [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
 * [Screenshots](#screenshots)
@@ -12,14 +11,6 @@
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
-
-
-
-## General Information
-- 
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
 
 
 ## Technologies Used
