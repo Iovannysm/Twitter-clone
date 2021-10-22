@@ -1,3 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  box-sizing: border-box;
+}
 
+:root {
+  --primary: rgb(74, 153, 233);
+  --neutralgrey: rgb(209, 217, 221);
+  --lightgrey: rgb(230, 230, 230);
+  --lightestgrey: rgba(240, 240, 240, 0.753);
+  --darkerlightgrey: rgb(239,243,244);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.left-side {
+  width: 790px;
+  padding: 0;
+  margin: 0;
+}
+.left-side img {
+  width: 790px;
+  padding: 0;
+  margin: 0;
+}
+
+.right-side {
+  width: 850px;
+  margin-left: 30px;
+  text-align: left;
+}
+.right-side i {
+  margin: 80px 0px;
+  font-size: 3.3em;
+  color: var(--primary);
+}
+.right-side h2 {
+  font-size: 68px;
+  font-weight: 900;
+}
+.right-side h3 {
+  margin-top: 20px;
+  font-size: 32px;
+  font-weight: 900;
+}
+.right-side p {
+  margin: 0;
+}
+.right-side .buttons {
+  margin: 20px 0;
+  width: 300px;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid var(--neutralgrey);
+}
+.right-side button {
+  transition: background-color 0.5s;
+}
+.right-side button:hover {
+  background-color: var(--lightgrey);
+}
+.right-side footer h6 {
+  margin: 0 auto;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#btnClose {
+  margin: 10px;
+  padding: 0;
+}
+
+.modal-dialog {
+  width: 800px;
+}
+.modal-dialog i {
+  margin: 0px auto;
+  font-size: 2em;
+  color: var(--primary);
+}
+.modal-dialog button {
+  border-radius: 25px;
+  padding: 10px 30px;
+}
+
+#modal {
+  border-radius: 20px;
+}
+
+#modal-header {
+  border: none;
+}
+
+#previewImage {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+#tweetIndex {
+  width: 100vw;
+  height: 100vh;
+}
+#tweetIndex .row {
+  height: 100%;
+}
+#tweetIndex section {
+  height: 100%;
+}
+
+#leftMenu {
+  font-weight: bold;
+  color: #1b1f24;
+  position: relative;
+}
+#leftMenu .nav-link {
+  color: #1b1f24;
+  text-decoration: none;
+}
+#leftMenu button {
+  border-radius: 20px;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  color: white;
+}
+#leftMenu a {
+  transition: 0.5s;
+  color: var(--primary);
+  border-radius: 60px;
+  background-color: white;
+}
+#leftMenu a:hover {
+  background-color: var(--darkerlightgrey);
+  border-radius: 60px;
+}
+#leftMenu #tweetButton {
+  background-color: transparent;
+}
+#leftMenu #tweetButton:hover {
+  background-color: transparent;
+}
+#leftMenu .blueHover {
+  width: 45px;
+  height: 38px;
+  margin-left: 15px;
+}
+#leftMenu .blueHover:hover {
+  width: 45px;
+  background-color: #e8f5fd;
+}
+#leftMenu i {
+  font-size: 1.5em;
+  margin: 5px 10px;
+}
+#leftMenu .dropup {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  padding: 10px;
+}
+
+#tweetSection {
+  overflow: auto;
+  max-width: 1000px;
+}
+#tweetSection .topCollapse #collapseLeft, #tweetSection .topCollapse #collapseRight {
+  background-color: transparent;
+  color: var(--primary);
+}
+#tweetSection .topCollapse .btn-light:focus {
+  box-shadow: 0 0 0 0;
+}
+#tweetSection input {
+  border-radius: 20px;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  color: white;
+  font-weight: bold;
+  width: 13%;
+}
+#tweetSection a {
+  text-decoration: none;
+  color: black;
+}
+#tweetSection h6 {
+  margin-left: 70px;
+}
+#tweetSection button {
+  background-color: rgba(255, 255, 255, 0);
+}
+#tweetSection .card.rounded-0 {
+  border: 1px solid var(--lightestgrey);
+}
+#tweetSection .card {
+  transition: 0.3s;
+}
+#tweetSection .card:hover {
+  background-color: var(--darkerlightgrey);
+}
+#tweetSection textarea {
+  width: 570px;
+}
+#tweetSection .textarea {
+  width: 850px;
+}
+#tweetSection h5 {
+  font-size: 16px;
+}
+#tweetSection img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border: 1px solid var(--lightgrey);
+}
+#tweetSection #commentLink {
+  margin: 0 auto;
+}
+#tweetSection .buttonDiv {
+  margin-left: auto;
+}
+#tweetSection #delete {
+  margin-left: 10px;
+  color: red;
+}
+
+#searchSection .searchBar {
+  margin-top: 10px;
+  border-radius: 30px;
+  overflow: hidden;
+  padding-left: 15px;
+  background-color: var(--darkerlightgrey);
+}
+#searchSection .searchBar input {
+  background-color: var(--darkerlightgrey);
+}
+#searchSection .searchBar i {
+  font-size: 1.2em;
+  padding-top: 12px;
+  color: rgba(139, 139, 139, 0.89);
+  background-color: rgba(255, 255, 255, 0);
+}
+#searchSection .searchBar a {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 0;
+  font-size: 13px;
+  padding: 10px;
+}
+#searchSection .searchBar .btn {
+  font-size: 14px;
+}
+#searchSection .searchBar .form-control:focus {
+  box-shadow: 0 0 0 0;
+}
+
+@media only screen and (max-width: 1300px) {
+  #tweetSection textarea {
+    width: 450px;
+  }
+  #tweetSection .textarea {
+    width: 750px;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

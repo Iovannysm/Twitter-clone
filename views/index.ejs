@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/_head.ejs', {page: "Home"})%>
+    <%- include('./partials/_head.ejs', {page: "Login"})%>
 <body>
-    <main class="container">
-        <section class="container left-side">
+    <main class="row container">
+        <section class="col left-side">
             <img src="https://i.imgur.com/U3IJC5J.png">
         </section>
-        <section class="container right-side">
+
+        <section class="col right-side">
             <i class="fab fa-twitter"></i>
-        </section>
 
+            <article class="row">
+                <h2>Happening now</h2>
+                <h3>Join Twitter today.</h3>
+            </article>
+            <article class="row">
+                    
+                    <!--data-bs-toggle="modal" data-bs-target="#signUpModal"-->
+        
+                    <a href="/register"><button class="btn btn-light buttons fw-bold">Sign up with email</button></a>
 
+                    <p>Already have an account?</p>
 
+                    <a href="/login"><button class="btn btn-light buttons fw-bold">Sign in</button></a>
+            </article>
+        </section>  
     </main>
+    <footer>
+        <h6 class="text-center lh-lg">&copy; <%= new Date().getFullYear(); %> Twitter, Inc.</h6>
+    </footer>
 </body>
 </html>

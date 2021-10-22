@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: rgb(74, 153, 233);
+  --neutralgrey: rgb(209, 217, 221);
+  --lightgrey: rgb(230, 230, 230);
+  --lightestgrey: rgba(240, 240, 240, 0.753);
+  --darkerlightgrey: rgb(239,243,244);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+// Landing Page Layout
+.container { 
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.left-side {
+  width: 790px;
+  padding: 0;
+  margin: 0;
+
+  img {
+    width: 790px;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.right-side {
+  width: 850px;
+  margin-left: 30px;
+  text-align: left;
+
+  i {
+    margin: 80px 0px;
+    font-size: 3.3em;
+    color: var(--primary);
+  }
+
+  h2 {
+    font-size: 68px;
+    font-weight: 900;
+  }
+  h3 {
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: 900;
+  }
+
+  p {
+    margin: 0;
+  }
+  
+  .buttons {
+    margin: 20px 0;
+    width: 300px;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid var(--neutralgrey);
+  }
+
+
+  button {
+    transition: background-color 0.5s;
+  }
+
+  button:hover {
+    background-color: var(--lightgrey);
+  }
+  footer {
+    h6 {
+      margin: 0 auto;
+      line-height: 1.5;
+      text-align: center;
+    }
+    
+  }  
+}
+
+// Sign Up Modal
+#btnClose {
+  margin: 10px;
+  padding: 0;
+}
+
+.modal-dialog{
+  width: 800px;
+
+  i {
+    margin: 0px auto;
+    font-size: 2em;
+    color: var(--primary);
+  }
+
+  button {
+    border-radius: 25px;
+    padding: 10px 30px;
+  }
+}
+
+#modal {
+  border-radius: 20px;
+}
+
+#modal-header {
+  border: none;
+}
+
+//Edit User Modal
+
+#previewImage {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+//Dashboard
+
+#tweetIndex {
+  width: 100vw;
+  height: 100vh;
+
+.row {
+  height: 100%;
+}
+
+section {
+  height: 100%;
+}
+
+// Tweets Nav Bar
+}
+
+  #leftMenu {
+    font-weight: bold;
+    color: #1b1f24;
+    position: relative;
+
+
+    .nav-link {
+      color: #1b1f24;
+      text-decoration: none;
+    }
+    
+    button{
+      border-radius: 20px;
+      background-color: var(--primary);
+      border: 1px solid var(--primary);
+      color: white;
+    }
+
+    a {
+      transition: 0.5s;
+      color: var(--primary);
+      border-radius: 60px;
+      background-color: white;
+    }
+
+    a:hover {
+      background-color: var(--darkerlightgrey);
+      border-radius: 60px;
+    }
+
+    #tweetButton {
+      background-color: transparent;
+    }
+
+    #tweetButton:hover {
+      background-color: transparent;
+    }
+
+    .blueHover {
+      width: 45px;
+      height: 38px;
+      margin-left: 15px;
+    }
+
+    .blueHover:hover {
+      width: 45px;
+      background-color: rgb(232,245,253);
+    }
+
+    i {
+      font-size: 1.5em;
+      margin: 5px 10px;
+    }
+
+    .dropup {
+      position: absolute;
+      bottom: 0;
+      width: 90%;
+      padding: 10px;
+    }
+
+  }
+
+// Tweets Middle Section
+
+#tweetSection {
+  overflow: auto;
+  max-width: 1000px;
+
+  .topCollapse {
+    #collapseLeft, #collapseRight {
+      background-color: transparent;
+      color: var(--primary);
+    }
+
+    .btn-light:focus {
+      box-shadow: 0 0 0 0;
+    }
+
+  }
+
+
+  input {
+    border-radius: 20px;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    color: white;
+    font-weight: bold;
+    width: 13%;
+  } 
+
+  a {
+    text-decoration: none;
+    color:black;
+  }
+  
+  h6 {
+    margin-left: 70px;
+  }
+
+
+  button {
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+
+  .card.rounded-0 {
+    border: 1px solid var(--lightestgrey);
+  }
+
+  .card {
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    background-color: var(--darkerlightgrey);
+  }
+
+  textarea {
+    width: 570px;
+
+  }
+  .textarea {
+    width: 850px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border: 1px solid var(--lightgrey);
+  }
+  
+  #commentLink {
+    margin: 0 auto;
+  }
+
+  .buttonDiv {
+    margin-left: auto;
+  }
+
+  #delete {
+    margin-left: 10px;
+    color: red;
+  }
+}
+
+#searchSection {
+
+  .searchBar {
+    margin-top: 10px;
+    border-radius: 30px;
+    overflow:hidden;
+    padding-left: 15px;
+    background-color: var(--darkerlightgrey);
+
+    input {
+      background-color: var(--darkerlightgrey);
+    }
+
+    i {
+      font-size: 1.2em;
+      padding-top: 12px;
+      color: rgba(139, 139, 139, 0.89);
+      background-color: rgba(255, 255, 255, 0);
+    }
+    a {
+      background-color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 0;
+      font-size: 13px;
+      padding: 10px;
+    }
+    .btn {
+      font-size: 14px;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 0 0;   
+    }
+  }
+}
+
+@media only screen and (max-width: 1300px ) {
+ #tweetSection {
+  textarea {
+    width: 450px;
+
+  }
+  .textarea {
+    width: 750px;
+  }
+ } 
+}
