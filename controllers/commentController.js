@@ -16,8 +16,6 @@ router.get("/:id",  function (req, res, next) {
             req.error = error;
             return next();
         }
-
-        console.log(allComments);
         res.render("/tweets");
 
     });
@@ -34,8 +32,6 @@ router.post("/", function (req, res, next) {
         req.error = error;
         return next();
       }
-      
-      console.log(newComment);
        res.redirect(`tweets/${data.tweet}`);
   });
 });

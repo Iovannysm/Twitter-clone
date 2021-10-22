@@ -33,7 +33,6 @@ router.get("/", async function (req, res, next){
           users: allUsers,
           comment: allComments,
           }
-          console.log(context);
       return res.render("tweet/index", context);
   } catch (error) {
       console.log(error);
@@ -101,7 +100,6 @@ router.post("/", function (req, res, next) {
         req.error = error;
         return next();
       }
-      console.log(newTweet);
       res.redirect("/tweets");
   });
 });

@@ -1,22 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/_head.ejs', {page: "Dashboard"})%>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+        <!-- Bootstrap CSS-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <!-- Internal CSS -->
+        <link rel="stylesheet" href="/styles/main.css" />
+      
+        <!-- Bootstrap script -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      
+        <!-- jQuery script-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#collapseLeft").on("click", function () { 
+                    $("#leftMenu").toggle();
+
+                    $(".row").toggleClass("d-flex flex-row align-items-center justify-content-center");
+
+                    
+                    if ($("#leftMenu").is(":visible") && $("#tweetContent").is(":visible") ) {
+                        if($("#tweetContent").has("textarea")){
+                            $("#tweetContent").removeClass("textarea");
+                        }
+                    } else if ($("#leftMenu").is(":visible") && ($("#searchSection").is(":hidden")) ) {
+                            if($("#tweetContent").has("textarea")){
+                            $("#tweetContent").addClass("textarea");
+                            } else {
+                            $("#tweetContent").removeClass("textarea");
+                        }
+   
+                    } else {
+                        $("#tweetContent").addClass("textarea");
+                        }
+                });
+                $("#collapseRight").on("click", function () { 
+                    $("#searchSection").toggle();
+                    
+                    if ($("#leftMenu").is(":visible") && $("#searchSection").is(":hidden")){
+                        $("#tweetContent").addClass("textarea");
+                    } else if ($("#leftMenu").is(":hidden") && ($("#searchSection").is(":visible")) ) {
+                            $("#tweetContent").addClass("textarea");
+                    } else if ($("#leftMenu").is(":visible") && $("#tweetContent").is(":visible") ) {
+                        if($("#tweetContent").has("textarea")){
+                            $("#tweetContent").removeClass("textarea");
+                        }
+                    } else {
+                        $("#tweetContent").addClass("textarea");
+                        }
+                });
+
+                const theme = document.getElementById("theme");
+                theme.addEventListener("change", () => {
+                    const themeValue = theme.value;
+                    document.body.style.backgroundColor = themeValue;
+                    document.getElementById("leftMenu").classList.remove('bg-white');
+                    document.getElementById("navMenu").classList.remove('bg-white');
+                    document.getElementById("leftMenu").style.backgroundColor = themeValue;
+                })
+            })
+        </script>
+        <title>Twitter - Dashboard</title>
+      </head>
 <body>
     <div class="container-fluid" id="tweetIndex">    
         <div class="row">
-        <%- include('../partials/nav/_nav.ejs')%>
+            <%- include('../partials/nav/_nav.ejs')%>
             <section class="col" id="tweetSection">
                 <article>
+                    <div class="topCollapse d-flex justify-content-between">
+                        <button id="collapseLeft" class="btn btn-light border-0"><i class="fas fa-bars"></i></button>
+                        <button id="collapseRight" class="btn btn-light border-0"><i class="fas fa-search"></i></button>
+                    </div>
                     <div class="card rounded-0">
                         <div class="card-body d-flex flex-column">
+                            
                             <h4 class="card-title fw-bold mb-3">Home</h4>
                             
                             <div class="d-flex justify-content-around">
                             <img src="<%= user.avatar %>" class="rounded-circle">
-                            <form action="/tweets" method="POST" class="d-flex flex-column">
-                                <div class="mb-3">
-                                    <textarea class="form-control" id="tweetContent" name="content" placeholder="What's happening?" rows="3" cols="65" required></textarea>   
-                                </div>
+                            <form action="/tweets" method="POST" class="d-flex flex-column" id="tweetBox">
+                                
+                                    <textarea maxlength="300" class="form-control mb-3" id="tweetContent" name="content" placeholder="What's happening?"  required></textarea>   
+                                
                             </div>    
                             <input type="submit" value="Tweet" class="btn btn-primary ml-auto align-self-end"></input>
                             </form>
@@ -24,24 +96,28 @@
                     </div>
                 </article>
                 
+            <% if (tweets.length < 1) { %>
+            <h3 class="py-3 text-center">No search results found.</h3>
 
-            <% for (let i = 0; i < tweets.length; i++) { %>
-            <% const tweet = tweets[i]; %>        
+            <% } else { %>
+                    
+                <% for (let i = 0; i < tweets.length; i++) { %>
+                <% const tweet = tweets[i]; %>        
                   
                 <article class="tweet">
                     <div class="card mb-0 rounded-0 border-top-0">
                         <div class="card-body d-flex flex-row">
                           <img src="<%= tweet.user.avatar%>" id="avatar" class="rounded-circle">
                           <a href="/tweets/<%= tweet.id %>"><h5 class="card-title"><%= tweet.user.username %>
-                            <%  let time = tweet.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); %>
-                            <span id="time"><%= time %></span></h5>
+                            <span class="text-muted ml-3 fw-light small">@<%= tweet.user.username %></span></h5>
                           <p class="card-text"><%= tweet.content%></p>
+                          <span class="ml-0 text-muted fw-light"><%= tweet.date.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day:'numeric', year:'numeric', hour:'numeric', minute:'numeric', timeZoneName: 'short' } ) %></span>
                           </a>
                           <div class="d-flex flex-column buttonDiv">
                             <% if (tweet.user.id == user.id ) { %>
                                 <div class="btn-group dropend">
                                     <button type="button" class="btn btn-light border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-h"></i>
+                                        <i class="fas fa-ellipsis-h text-muted"></i>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li>
@@ -52,12 +128,12 @@
                                 </div>
                             <% } %>                            
                             </form>
-                            <a href="/tweets/<%= tweet.id %>" class="align-self-end" id="commentLink"><button class="btn btn-light buttons fw-bold border-0"><i class="far fa-comment"></i></button></a>
+                            <a href="/tweets/<%= tweet.id %>" class="align-self-end" id="commentLink"><button class="btn btn-light buttons fw-bold border-0"><i class="far fa-comment text-muted"></i></button></a>
                           </div>
                         </div>
                       </div>
                 </article>
-
+                <% } %>
             <% } %>
 
             </section>
@@ -70,8 +146,7 @@
                             <i class="fas fa-search"></i>
                           </span>
                           <input name="q" type="search" class="form-control border-0" placeholder="Search tweets" aria-label="search" aria-describedby="search">
-                          <input type="submit" class="btn btn-light" value="Search">
-                          <a href="/tweets" class="btn btn-light"> Reset</a>
+                          <a href="/tweets" class="btn btn-light text-white"> Reset</a>
                         </div>
                     </div>
                     </div>

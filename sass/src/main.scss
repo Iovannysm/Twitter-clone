@@ -9,6 +9,7 @@
   --neutralgrey: rgb(209, 217, 221);
   --lightgrey: rgb(230, 230, 230);
   --lightestgrey: rgba(240, 240, 240, 0.753);
+  --darkerlightgrey: rgb(239,243,244);
 }
 
 body {
@@ -18,7 +19,7 @@ body {
   height: 100vh;
 }
 
-// Index home page
+// Landing Page Layout
 .container { 
   margin: 0;
   padding: 0;
@@ -125,8 +126,6 @@ body {
   margin-bottom: 15px;
 }
 
-
-
 //Dashboard
 
 #tweetIndex {
@@ -149,6 +148,7 @@ section {
     color: #1b1f24;
     position: relative;
 
+
     .nav-link {
       color: #1b1f24;
       text-decoration: none;
@@ -161,6 +161,37 @@ section {
       color: white;
     }
 
+    a {
+      transition: 0.5s;
+      color: var(--primary);
+      border-radius: 60px;
+      background-color: white;
+    }
+
+    a:hover {
+      background-color: var(--darkerlightgrey);
+      border-radius: 60px;
+    }
+
+    #tweetButton {
+      background-color: transparent;
+    }
+
+    #tweetButton:hover {
+      background-color: transparent;
+    }
+
+    .blueHover {
+      width: 45px;
+      height: 38px;
+      margin-left: 15px;
+    }
+
+    .blueHover:hover {
+      width: 45px;
+      background-color: rgb(232,245,253);
+    }
+
     i {
       font-size: 1.5em;
       margin: 5px 10px;
@@ -171,8 +202,6 @@ section {
       bottom: 0;
       width: 90%;
       padding: 10px;
-    
-    
     }
 
   }
@@ -181,6 +210,20 @@ section {
 
 #tweetSection {
   overflow: auto;
+  max-width: 1000px;
+
+  .topCollapse {
+    #collapseLeft, #collapseRight {
+      background-color: transparent;
+      color: var(--primary);
+    }
+
+    .btn-light:focus {
+      box-shadow: 0 0 0 0;
+    }
+
+  }
+
 
   input {
     border-radius: 20px;
@@ -196,13 +239,34 @@ section {
     color:black;
   }
   
+  h6 {
+    margin-left: 70px;
+  }
+
 
   button {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
   }
+
 
   .card.rounded-0 {
     border: 1px solid var(--lightestgrey);
+  }
+
+  .card {
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    background-color: var(--darkerlightgrey);
+  }
+
+  textarea {
+    width: 570px;
+
+  }
+  .textarea {
+    width: 850px;
   }
 
   h5 {
@@ -216,13 +280,7 @@ section {
   }
   
   #commentLink {
-    margin-left: auto;
-
-  }
-
-  #time {
-    color: rgba(139, 139, 139, 0.89);
-    margin-left: 10px;
+    margin: 0 auto;
   }
 
   .buttonDiv {
@@ -233,21 +291,26 @@ section {
     margin-left: 10px;
     color: red;
   }
-
 }
 
 #searchSection {
 
   .searchBar {
     margin-top: 10px;
-    border: 1px solid var(--neutralgrey);
-    border-radius: 10px;
+    border-radius: 30px;
     overflow:hidden;
-    padding-left: 10px;
+    padding-left: 15px;
+    background-color: var(--darkerlightgrey);
+
+    input {
+      background-color: var(--darkerlightgrey);
+    }
 
     i {
-      font-size: 1.3em;
-      padding-top: 10px;
+      font-size: 1.2em;
+      padding-top: 12px;
+      color: rgba(139, 139, 139, 0.89);
+      background-color: rgba(255, 255, 255, 0);
     }
     a {
       background-color: var(--primary);
@@ -261,7 +324,19 @@ section {
     }
 
     .form-control:focus {
-      box-shadow: 0 0 0 0;
+      box-shadow: 0 0 0 0;   
     }
   }
+}
+
+@media only screen and (max-width: 1300px ) {
+ #tweetSection {
+  textarea {
+    width: 450px;
+
+  }
+  .textarea {
+    width: 750px;
+  }
+ } 
 }
