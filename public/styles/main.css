@@ -144,6 +144,12 @@ body {
   background-color: var(--darkerlightgrey);
   border-radius: 60px;
 }
+#leftMenu #tweetButton {
+  background-color: transparent;
+}
+#leftMenu #tweetButton:hover {
+  background-color: transparent;
+}
 #leftMenu .blueHover {
   width: 45px;
   height: 38px;

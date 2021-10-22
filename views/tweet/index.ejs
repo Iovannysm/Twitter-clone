@@ -85,7 +85,7 @@
                             
                             <div class="d-flex justify-content-around">
                             <img src="<%= user.avatar %>" class="rounded-circle">
-                            <form action="/tweets" method="POST" class="d-flex flex-column">
+                            <form action="/tweets" method="POST" class="d-flex flex-column" id="tweetBox">
                                 <div class="mb-3">
                                     <textarea maxlength="300" class="form-control" id="tweetContent" name="content" placeholder="What's happening?"  required></textarea>   
                                 </div>
