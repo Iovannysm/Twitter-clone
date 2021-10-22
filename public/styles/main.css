@@ -137,6 +137,8 @@ body {
 #leftMenu a {
   transition: 0.5s;
   color: var(--primary);
+  border-radius: 60px;
+  background-color: white;
 }
 #leftMenu a:hover {
   background-color: var(--darkerlightgrey);
@@ -164,6 +166,7 @@ body {
 
 #tweetSection {
   overflow: auto;
+  max-width: 1000px;
 }
 #tweetSection .topCollapse #collapseLeft, #tweetSection .topCollapse #collapseRight {
   background-color: transparent;
@@ -198,6 +201,12 @@ body {
 }
 #tweetSection .card:hover {
   background-color: var(--darkerlightgrey);
+}
+#tweetSection textarea {
+  width: 550px;
+}
+#tweetSection .textarea {
+  width: 850px;
 }
 #tweetSection h5 {
   font-size: 16px;

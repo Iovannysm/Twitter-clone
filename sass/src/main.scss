@@ -164,6 +164,8 @@ section {
     a {
       transition: 0.5s;
       color: var(--primary);
+      border-radius: 60px;
+      background-color: white;
     }
 
     a:hover {
@@ -200,7 +202,7 @@ section {
 
 #tweetSection {
   overflow: auto;
-
+  max-width: 1000px;
 
   .topCollapse {
     #collapseLeft, #collapseRight {
@@ -249,6 +251,13 @@ section {
 
   .card:hover {
     background-color: var(--darkerlightgrey);
+  }
+
+  textarea {
+    width: 550px;
+  }
+  .textarea {
+    width: 850px;
   }
 
   h5 {
