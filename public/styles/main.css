@@ -134,6 +134,31 @@ body {
   border: 1px solid var(--primary);
   color: white;
 }
+#leftMenu a {
+  transition: 0.5s;
+  color: var(--primary);
+  border-radius: 60px;
+  background-color: white;
+}
+#leftMenu a:hover {
+  background-color: var(--darkerlightgrey);
+  border-radius: 60px;
+}
+#leftMenu #tweetButton {
+  background-color: transparent;
+}
+#leftMenu #tweetButton:hover {
+  background-color: transparent;
+}
+#leftMenu .blueHover {
+  width: 45px;
+  height: 38px;
+  margin-left: 15px;
+}
+#leftMenu .blueHover:hover {
+  width: 45px;
+  background-color: #e8f5fd;
+}
 #leftMenu i {
   font-size: 1.5em;
   margin: 5px 10px;
@@ -147,6 +172,14 @@ body {
 
 #tweetSection {
   overflow: auto;
+  max-width: 1000px;
+}
+#tweetSection .topCollapse #collapseLeft, #tweetSection .topCollapse #collapseRight {
+  background-color: transparent;
+  color: var(--primary);
+}
+#tweetSection .topCollapse .btn-light:focus {
+  box-shadow: 0 0 0 0;
 }
 #tweetSection input {
   border-radius: 20px;
@@ -164,10 +197,22 @@ body {
   margin-left: 70px;
 }
 #tweetSection button {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
 }
 #tweetSection .card.rounded-0 {
   border: 1px solid var(--lightestgrey);
+}
+#tweetSection .card {
+  transition: 0.3s;
+}
+#tweetSection .card:hover {
+  background-color: var(--darkerlightgrey);
+}
+#tweetSection textarea {
+  width: 550px;
+}
+#tweetSection .textarea {
+  width: 850px;
 }
 #tweetSection h5 {
   font-size: 16px;
@@ -203,6 +248,7 @@ body {
   font-size: 1.2em;
   padding-top: 12px;
   color: rgba(139, 139, 139, 0.89);
+  background-color: rgba(255, 255, 255, 0);
 }
 #searchSection .searchBar a {
   background-color: var(--primary);
