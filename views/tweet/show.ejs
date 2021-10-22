@@ -138,9 +138,9 @@
                                 <div class="card-body d-flex flex-row">
                                   <img src="<%= comment.user.avatar%>" id="avatar" class="rounded-circle">
                                   <a><h5 class="card-title"><%= comment.user.username %>
-                                    <span class="text-muted ml-3 fw-light small">@<%= tweet.user.username %></span></h5>
+                                    <span class="text-muted ml-3 fw-light small">@<%= comment.user.username %></span></h5>
                                   <p class="card-text"><%= comment.content%></p>
-                                  <span class="ml-0 text-muted fw-light"><%= tweet.date.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day:'numeric', year:'numeric', hour:'numeric', minute:'numeric', timeZoneName: 'short' } ) %></span>
+                                  <span class="ml-0 text-muted fw-light"><%= comment.date.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day:'numeric', year:'numeric', hour:'numeric', minute:'numeric', timeZoneName: 'short' } ) %></span>
                                   </a>
                                   <div class="d-flex flex-column buttonDiv">
                                     <% if (comment.user.id == user.id ) { %>
