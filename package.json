@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "This is a tweeter clone",
   "main": "index.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "7.24.x"
+  },
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch-sass": "sass -w sass/src:public/styles",
