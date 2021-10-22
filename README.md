@@ -41,8 +41,14 @@ Current ready features:
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+![Landing Page](./img/screenshot.png)
+![Sign Up](./img/screenshot.png)
+![Sign In](./img/screenshot.png)
+![Dashboard](./img/screenshot.png)
+![Dashboard Collapsed](./img/screenshot.png)
+![Tweet](./img/screenshot.png)
+![Comment](./img/screenshot.png)
+![Edit User](./img/screenshot.png)
 
 
 ## Setup
