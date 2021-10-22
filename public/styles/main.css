@@ -209,7 +209,7 @@ body {
   background-color: var(--darkerlightgrey);
 }
 #tweetSection textarea {
-  width: 550px;
+  width: 570px;
 }
 #tweetSection .textarea {
   width: 850px;
@@ -262,6 +262,15 @@ body {
 }
 #searchSection .searchBar .form-control:focus {
   box-shadow: 0 0 0 0;
+}
+
+@media only screen and (max-width: 1300px) {
+  #tweetSection textarea {
+    width: 450px;
+  }
+  #tweetSection .textarea {
+    width: 750px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
