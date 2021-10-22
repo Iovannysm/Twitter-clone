@@ -1,24 +1,24 @@
 <nav class="col-3 bg-white" id="leftMenu">
         <section class="d-flex flex-column p-3 bg-white">
-            <a href="/tweets" class="">
-                <i class="fab fa-twitter icons" id="twitter"></i>
+            <a href="/tweets" class="blueHover rounded-circle">
+                <i class="fab fa-twitter icons mb-3" id="twitter"></i>
             </a>
         <div class="d-flex flex-row align-items-between">
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="/tweets" class="nav-link"><i class="fas fa-home"></i> Home </a>
-                    <a href="/tweets" class="nav-link"><i class="fas fa-th-list"></i> Tweets </a>
-                    <a href="/user" class="nav-link"><i class="far fa-user"></i> Account </a>
+                    <a href="/tweets" class="nav-link fw-bold mb-2"><i class="fas fa-home"></i> Home </a>
+                    <a href="/user" class="nav-link fw-bold"><i class="far fa-user"></i> Account </a>
                 </li>
             </ul>
         </div>
         <button type="button" class="btn btn-primary mt-3 fw-bold">Tweet</button>
 
-            <footer class="dropup">
-                <hr>
-                <a class="d-flex align-items-center justify-content-around text-decoration-none dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="<%= user.avatar %>" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <span><%= user.username %></span>
+        <footer class="dropup d-flex align-items-center justify-content-around border-top border-2">
+                <img src="<%= user.avatar %>" alt="" width="32" height="32" class="rounded-circle me-2">
+                <span class="text-dark"><%= user.username %></span> 
+                <span class="text-muted">@<%= user.username %></span>
+                <a class="text-end" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-ellipsis-h text-muted fs-6"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end text-small shadow" aria-labelledby="dropdownMenuButton">
                     <div class="d-flex flex-row justify-content-start align-items-center p-2">

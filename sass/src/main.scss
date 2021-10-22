@@ -19,7 +19,7 @@ body {
   height: 100vh;
 }
 
-// Index home page
+// Landing Page Layout
 .container { 
   margin: 0;
   padding: 0;
@@ -126,8 +126,6 @@ body {
   margin-bottom: 15px;
 }
 
-
-
 //Dashboard
 
 #tweetIndex {
@@ -150,6 +148,7 @@ section {
     color: #1b1f24;
     position: relative;
 
+
     .nav-link {
       color: #1b1f24;
       text-decoration: none;
@@ -162,6 +161,27 @@ section {
       color: white;
     }
 
+    a {
+      transition: 0.5s;
+      color: var(--primary);
+    }
+
+    a:hover {
+      background-color: var(--darkerlightgrey);
+      border-radius: 60px;
+    }
+
+    .blueHover {
+      width: 45px;
+      height: 38px;
+      margin-left: 15px;
+    }
+
+    .blueHover:hover {
+      width: 45px;
+      background-color: rgb(232,245,253);
+    }
+
     i {
       font-size: 1.5em;
       margin: 5px 10px;
@@ -172,8 +192,6 @@ section {
       bottom: 0;
       width: 90%;
       padding: 10px;
-    
-    
     }
 
   }
@@ -182,6 +200,20 @@ section {
 
 #tweetSection {
   overflow: auto;
+
+
+  .topCollapse {
+    #collapseLeft, #collapseRight {
+      background-color: transparent;
+      color: var(--primary);
+    }
+
+    .btn-light:focus {
+      box-shadow: 0 0 0 0;
+    }
+
+  }
+
 
   input {
     border-radius: 20px;
@@ -203,11 +235,20 @@ section {
 
 
   button {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
   }
+
 
   .card.rounded-0 {
     border: 1px solid var(--lightestgrey);
+  }
+
+  .card {
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    background-color: var(--darkerlightgrey);
   }
 
   h5 {
@@ -222,7 +263,6 @@ section {
   
   #commentLink {
     margin: 0 auto;
-
   }
 
   .buttonDiv {
@@ -252,7 +292,7 @@ section {
       font-size: 1.2em;
       padding-top: 12px;
       color: rgba(139, 139, 139, 0.89);
-      
+      background-color: rgba(255, 255, 255, 0);
     }
     a {
       background-color: var(--primary);
@@ -266,7 +306,7 @@ section {
     }
 
     .form-control:focus {
-      box-shadow: 0 0 0 0;
+      box-shadow: 0 0 0 0;   
     }
   }
 }
