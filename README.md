@@ -1,6 +1,6 @@
 # Twitter Clone Reverse Engineer
 > A reverse engineer of the popular social media application Twitter. Using Node.js, MongoDB, Express, EJS, and SASS, the clone works in conjunction to allow features such as user account creation and editing, tweeting, and commenting.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo [_here_](https://www.example.com). 
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -12,7 +12,7 @@
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
+
 
 
 ## General Information
@@ -41,58 +41,42 @@ Current ready features:
 
 
 ## Screenshots
-![Landing Page](./img/screenshot.png)
-![Sign Up](./img/screenshot.png)
-![Sign In](./img/screenshot.png)
-![Dashboard](./img/screenshot.png)
-![Dashboard Collapsed](./img/screenshot.png)
-![Tweet](./img/screenshot.png)
-![Comment](./img/screenshot.png)
-![Edit User](./img/screenshot.png)
+![Landing Page](./readmeimgs/image5.png)
+![Sign Up](./readmeimgs/image6.png)
+![Sign In](./readmeimgs/image8.png)
+![Dashboard](./readmeimgs/image1.png)
+![Dashboard Collapsed](./readmeimgs/image7.png)
+![Tweet](./readmeimgs/image2.png)
+![Edit User](./readmeimgs/image3.png)
 
 
-## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
+## Planning
+![MVP](./readmeimgs/planning1.png)
+![ERD](./readmeimgs/planning3.png)
+![User Flow](./readmeimgs/planning10.png)
+![Wireframe1](./readmeimgs/planning4.png)
+![Wireframe2](./readmeimgs/planning5.png)
+![Wireframe3](./readmeimgs/planning6.png)
+![Wireframe4](./readmeimgs/planning7.png)
+![Wireframe5](./readmeimgs/planning8.png)
+![Wireframe6](./readmeimgs/planning9.png)
 
-Proceed to describe how to install / setup one's local environment / get started with the project.
 
-
-## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
+## User Stories
+![User Stories](./readmeimgs/planning2.png)
 
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
-
+Project is: _complete_ 
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
-
-To do:
-- Feature to be added 1
-- Feature to be added 2
+- Mobile Responsive
+- Theme Improvement
 
 
 ## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+- This project was based on [twitter](https://www.twitter.com).
 
 
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
-
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->
