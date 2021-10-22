@@ -262,7 +262,8 @@ section {
   }
 
   textarea {
-    width: 550px;
+    width: 570px;
+
   }
   .textarea {
     width: 850px;
@@ -326,4 +327,16 @@ section {
       box-shadow: 0 0 0 0;   
     }
   }
+}
+
+@media only screen and (max-width: 1300px ) {
+ #tweetSection {
+  textarea {
+    width: 450px;
+
+  }
+  .textarea {
+    width: 750px;
+  }
+ } 
 }
