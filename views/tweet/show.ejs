@@ -7,7 +7,7 @@
         <%- include('../partials/nav/_nav.ejs')%>
             <section class="col" id="tweetSection">
                 <article class="tweet">
-                    <div class="card mb-0 rounded-0 border-top-0">
+                    <div class="card mb-0 py-3 rounded-0 border-top-0">
                         <div class="card-body d-flex flex-row">
                           <img src="<%= tweet.user.avatar%>" id="avatar" class="rounded-circle">
                           <a href="/tweets/<%= tweet.id %>"><h5 class="card-title"><%= tweet.user.username %>
